@@ -1,0 +1,175 @@
+body.londonafols .jumbotron .tagline {
+    list-style-type: none;
+    font-weight: 500;
+    font-size: x-large;
+}
+
+body.londonafols .nextmeetup {
+    background-color: #021799;
+    color: white;
+}
+
+body.londonafols .socialmedia {
+    color: black;
+    background-color: white;
+}
+
+body.londonafols .socialmedia .btn-primary {
+    background: #E70128 none;
+}
+
+body.londonafols .carousel-control.right {
+    background: none;
+}
+
+body.londonafols .carousel-control.left {
+    background: none;
+}
+
+body.londonafols .spinner .glyphicon-refresh {
+    display: inline-block;
+
+    -webkit-animation: spin 1000ms infinite linear;
+    animation: spin 1000ms infinite linear;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+@media screen and (max-width:768px) {
+    body.londonafols .jumbotron {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    body.londonafols .jumbotron .logo {
+        width: 250px;
+        position: relative;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    body.londonafols .jumbotron .tagline {
+        text-align : center;
+    }
+    body.londonafols .jumbotron .tagline li {
+        display: inline;
+    }
+
+    body.londonafols .jumbotron .tagline li:not(:last-of-type):after {
+        content: "\00b7";
+        margin-left: 5px;
+    }
+
+    body.londonafols .jumbotron .blurb {
+        padding: 15px 30px;
+    }
+
+    body.londonafols .jumbotron .blurb p {
+        display: inline;
+    }
+
+    body.londonafols .jumbotron p {
+        font-size: medium;
+    }
+}
+
+@media screen and (min-width:768px) {
+    body.londonafols .jumbotron {
+        padding-top: 24px;
+        padding-bottom: 12px;
+        margin-bottom: 0;
+    }
+
+    body.londonafols .jumbotron .logo {
+        padding-right: 30px;
+        margin-top: 48px;
+    }
+
+    body.londonafols .jumbotron .tagline {
+        font-size: 63px;
+        padding-left: 0;
+    }
+
+    body.londonafols .jumbotron .tagline li {
+        margin-bottom: -15px;
+    }
+
+    body.londonafols .jumbotron .tagline li:after {
+        content: ".";
+    }
+
+    body.londonafols .jumbotron .blurb {
+        margin-top: 12px;
+    }
+
+    body.londonafols .socialmedia {
+        padding: 30px 0;
+    }
+
+    body.londonafols .nextmeetup {
+        padding: 15px 0;
+    }
+
+    body.londonafols .nextmeetup .joinus h1 {
+        margin-top: 0px;
+        padding-left: 0px;
+    }
+
+    body.londonafols .nextmeetup .carousel-container {
+        height: 200px;
+        padding-left: 0;
+    }
+
+    body.londonafols .nextmeetup .glyphicon-refresh {
+        font-size: 32pt;
+    }
+
+    body.londonafols .nextmeetup .spinner {
+        position: absolute;
+        top: 50px;
+    }
+
+    body.londonafols .nextmeetup .carousel {
+        padding-left: 0;
+        padding-right: 0;
+        position: relative;
+    }
+
+    body.londonafols .nextmeetup .carousel .item {
+        height: 200px;
+    }
+
+    body.londonafols .nextmeetup .carousel .carousel-control.left {
+        left: -100px;
+    }
+
+    body.londonafols .nextmeetup .carousel .carousel-control.right {
+        right: -100px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:992px) {
+    body.londonafols .jumbotron .tagline {
+        font-size: 53px;
+        padding-left: 0;
+    }
+}
