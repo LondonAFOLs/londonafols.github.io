@@ -54,16 +54,9 @@ body.londonafols .where-and-when {
     padding-top: 10px;
 }
 
-body.londonafols .address a:link {
-    color: white;
-}
-
-body.londonafols .address a:visited {
-    color: white;
-}
-
-body.londonafols .address a span {
-    display: inline-block;
+body.londonafols .address span {
+    display: block;
+    margin-left: 5px;
 }
 
 @-webkit-keyframes spin {
@@ -105,8 +98,12 @@ body.londonafols .address a span {
         font-size: medium;
     }
 
-    body.londonafols .joinus, body.londonafols .nextmeetup, body.londonafols .socialmedia {
+    body.londonafols .joinus, body.londonafols .nextmeetup, body.londonafols .facebook, body.londonafols .twitter, body.londonafols .flickr {
         display: none;
+    }
+
+    body.londonafols .disclaimer {
+        padding-top: 50px;
     }
 }
 
@@ -136,8 +133,9 @@ body.londonafols .address a span {
     }
 
     body.londonafols .joinus h1 {
-        margin-top: 0px;
-        padding-left: 0px;
+        margin-top: 0;
+        padding-left: 0;
+        padding-right: 0;
     }
 
     body.londonafols .nextmeetup .container {
@@ -185,6 +183,15 @@ body.londonafols .address a span {
     body.londonafols .socialmedia {
         padding: 30px 0;
     }
+
+    body.londonafols .socialmedia .btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    body.londonafols .socialmedia .btn-title {
+        font-size: larger;
+    }
 }
 
 @media screen and (max-width:992px) {
@@ -209,6 +216,11 @@ body.londonafols .address a span {
     body.londonafols .jumbotron .blurb p {
         display: inline;
         font-size: medium;
+    }
+
+    body.londonafols .joinus h1 {
+        margin-top: 0px;
+        margin-left: 10px;
     }
 }
 

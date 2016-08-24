@@ -48,27 +48,25 @@ define(function (require) {
 
             var $whereWhenRow = $('<div class="row where-and-when"></div>');
 
-            $whereWhenRow.append($('<div class="col-md-1"><span class="glyphicon glyphicon-map-marker"></span></div>'));
-            var $address = $('<div class="address col-md-4" itemscope itemtype="http://schema.org/PostalAddress"></div>');
-            var $addressUrl = $('<a href=""></a>');
-            $addressUrl.append($('<span class="name" itemprop="name"></span>').text(venue.name));
+            $whereWhenRow.append($('<div class="col-md-1 col-sm-1"><span class="glyphicon glyphicon-map-marker"></span></div>'));
+            var $address = $('<div class="address col-md-4 col-sm-4" itemscope itemtype="http://schema.org/PostalAddress"></div>');
+            $address.append($('<span class="name" itemprop="name"></span>').text(venue.name));
             if (venue.address_1) {
-                $addressUrl.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_1));
+                $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_1));
             }
             if (venue.address_2) {
-                $addressUrl.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_2));
+                $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_2));
             }
             if (venue.address_3) {
-                $addressUrl.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_3));
+                $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_3));
             }
             if (venue.city) {
-                $addressUrl.append($('<span class="city" itemprop="addressLocality"></span>').text(venue.city));
+                $address.append($('<span class="city" itemprop="addressLocality"></span>').text(venue.city));
             }
-            $address.append($addressUrl);
             $whereWhenRow.append($address);
 
-            $whereWhenRow.append($('<div class="col-md-1"><span class="glyphicon glyphicon-time"></span></div>'));
-            var $when = $('<div class="when col-md-4"></div>').text(start);
+            $whereWhenRow.append($('<div class="col-md-1 col-sm-1"><span class="glyphicon glyphicon-time"></span></div>'));
+            var $when = $('<div class="when col-md-4 col-sm-4"></div>').text(start);
             $whereWhenRow.append($when);
 
             var $learnMoreRow = $('<div class="row"></div>')
