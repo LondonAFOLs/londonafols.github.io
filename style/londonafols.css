@@ -99,6 +99,11 @@ body.londonafols .address span {
         padding: 15px 45px;
     }
 
+    body.londonafols .jumbotron .tagline {
+        margin-top: 30px;
+        text-align: center;
+    }
+
     body.londonafols .joinus, body.londonafols .nextmeetup, body.londonafols .meetup .sitename, body.londonafols .facebook, body.londonafols .twitter, body.londonafols .flickr {
         display: none;
     }
@@ -146,15 +151,6 @@ body.londonafols .address span {
     body.londonafols .jumbotron .blurb > div {
         padding-left: 0;
         padding-right: 0;
-    }
-
-    body.londonafols .jumbotron .tagline li {
-        display: inline;
-    }
-
-    body.londonafols .jumbotron .tagline li:not(:last-of-type):after {
-        content: "\00b7";
-        margin-left: 5px;
     }
 
     body.londonafols .joinus {
@@ -224,10 +220,6 @@ body.londonafols .address span {
 }
 
 @media screen and (max-width:992px) {
-    body.londonafols .jumbotron .tagline {
-        margin-top: 30px;
-        text-align: center;
-    }
 
     body.londonafols .jumbotron .blurb p {
         display: inline;
@@ -250,10 +242,14 @@ body.londonafols .address span {
         padding-left: 0;
     }
 
+    body.londonafols .jumbotron .tagline ul {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
     body.londonafols .jumbotron .blurb {
         margin-top: 12px;
     }
-
 }
 
 @media screen and (min-width:992px) {
