@@ -15,7 +15,7 @@ define(function (require) {
     function addMeetups(meetups) {
         console.dir(meetups);
         for (var i = 0; i < meetups.length; i++) {
-            if (isPublic(meetups[i])) {
+            if (isVisible(meetups[i])) {
                 addMeetup(meetups[i], i);
             }
         }
@@ -50,15 +50,17 @@ define(function (require) {
 
             $whereWhenRow.append($('<div class="col-md-1 col-sm-1"><span class="glyphicon glyphicon-map-marker"></span></div>'));
             var $address = $('<div class="address col-md-4 col-sm-4" itemscope itemtype="http://schema.org/PostalAddress"></div>');
-            $address.append($('<span class="name" itemprop="name"></span>').text(venue.name));
-            if (venue.address_1) {
-                $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_1));
-            }
-            if (venue.address_2) {
-                $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_2));
-            }
-            if (venue.address_3) {
-                $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_3));
+            if (isPublic(meetup)) {
+                $address.append($('<span class="name" itemprop="name"></span>').text(venue.name));
+                if (venue.address_1) {
+                    $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_1));
+                }
+                if (venue.address_2) {
+                    $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_2));
+                }
+                if (venue.address_3) {
+                    $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_3));
+                }
             }
             if (venue.city) {
                 $address.append($('<span class="city" itemprop="addressLocality"></span>').text(venue.city));
@@ -88,8 +90,16 @@ define(function (require) {
         }
     }
 
+    function isVisible(meetup) {
+        return isPublic(meetup) || isPublicLimited(meetup);
+    }
+
     function isPublic(meetup) {
         return meetup.visibility && meetup.visibility === "public";
+    }
+
+    function isPublicLimited(meetup) {
+        return meetup.visibility && meetup.visibility === "public_limited";
     }
 
     $.ajax({
@@ -98,7 +108,7 @@ define(function (require) {
         jsonp: 'callback',
         dataType: 'jsonp'
     }).done(function(response) {
-        if (response.data && response.data.length && _.filter(response.data, self.isPublic).length) {
+        if (response.data && response.data.length && _.filter(response.data, isVisible).length) {
             addMeetups(response.data);
         } else {
             addNoMeetups();
