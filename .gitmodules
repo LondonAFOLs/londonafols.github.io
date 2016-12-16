@@ -1,0 +1,3 @@
+[submodule "MOCs"]
+	path = MOCs
+	url = https://github.com/LondonAFOLs/MOCs.git
