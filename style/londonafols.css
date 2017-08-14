@@ -1,268 +1,406 @@
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-xs-1,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9 {
+  min-height: 1px;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+}
+.container {
+  padding: 0;
+  width: auto;
+}
+body.londonafols {
+  margin: 0;
+  padding: 0;
+  font-size: 12pt;
+}
+body.londonafols p {
+  margin: 0 0 0.6em 0;
+  padding: 0;
+}
+body.londonafols h1,
+body.londonafols h2,
+body.londonafols h3,
+body.londonafols h4,
+body.londonafols h5,
+body.londonafols h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 12pt;
+}
+body.londonafols ul {
+  margin: 0;
+  padding: 0;
+}
+body.londonafols ul li {
+  margin: 0;
+  padding: 0;
+}
+body.londonafols .joinus {
+  margin: 3em 0 0.6em 0;
+  padding: 0 80px;
+}
+body.londonafols .joinus h1 {
+  font-size: 16pt;
+  margin: 0;
+}
+body.londonafols .row {
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
 body.londonafols .btn-primary {
-    background: #E70128 none;
-    border: none;
+  background: #E70128 none;
+  border: none;
 }
-
+body.londonafols .btn-primary:hover {
+  background: #b4011f;
+}
 body.londonafols .jumbotron {
-    background: white;
+  margin: 1.5em 0 0 0;
+  padding: 0;
+  width: 100%;
+  background: white;
 }
-
+body.londonafols .jumbotron .banner {
+  padding: 0 80px;
+}
+body.londonafols .jumbotron .banner .logo {
+  width: 268px;
+  padding: 0;
+  margin-right: 10px;
+  text-align: left;
+}
+body.londonafols .jumbotron .blurb {
+  margin-top: 1em;
+  padding: 0 80px;
+}
+body.londonafols .jumbotron .blurb p {
+  font-size: 14pt;
+  line-height: 130%;
+}
 body.londonafols .jumbotron .tagline {
-    list-style-type: none;
-    font-weight: 500;
-    font-size: x-large;
+  width: auto;
+  list-style-type: none;
+  font-weight: 500;
+  font-size: 24pt;
 }
-
+body.londonafols .jumbotron .tagline li {
+  margin: 0;
+  padding: 0;
+}
+body.londonafols .jumbotron .tagline li:after {
+  content: ".";
+}
 body.londonafols .nextmeetup {
-    background-color: #021799;
-    color: white;
+  padding: 0 80px;
+  background-color: #021799;
+  color: white;
+  position: relative;
 }
-
+body.londonafols .nextmeetup .carousel-container {
+  position: relative;
+  padding: 0 0 40px 0;
+}
+body.londonafols .nextmeetup .carousel-indicators {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  bottom: -30px;
+  text-align: center;
+  width: 100%;
+}
+body.londonafols .nextmeetup .glyphicon-refresh {
+  font-size: 3em;
+}
+body.londonafols .nextmeetup .learnmore {
+  margin-top: 20px;
+}
+body.londonafols .nextmeetup .spinner {
+  position: absolute;
+  left: 0;
+  top: 50px;
+}
+body.londonafols .nextmeetup .carousel {
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+}
+body.londonafols .nextmeetup .carousel .item {
+  min-height: 220px;
+  padding: 0;
+}
+body.londonafols .nextmeetup .carousel .item .row {
+  margin-left: 0px;
+}
+body.londonafols .nextmeetup .carousel .item h2.row {
+  margin-top: 1em;
+  font-size: 16pt;
+}
+body.londonafols .nextmeetup .carousel .item .col-md-1.col-sm-1 {
+  display: inline-block;
+  float: left;
+  clear: both;
+  width: auto;
+  text-align: left;
+  margin-right: 0.3em;
+}
+body.londonafols .nextmeetup .carousel .item .address,
+body.londonafols .nextmeetup .carousel .item .when {
+  text-align: left;
+  display: inline-block;
+  float: left;
+  width: auto;
+  max-width: 80%;
+  margin: 0 3em 1em 0;
+}
+body.londonafols .nextmeetup .carousel .item .address span,
+body.londonafols .nextmeetup .carousel .item .when span {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+}
 body.londonafols .socialmedia {
-    color: black;
-    background-color: white;
+  margin: 2em 0 0 0;
+  padding: 0 80px;
+  color: black;
+  background-color: white;
 }
-
-body.londonafols .carousel {
-    height: 100%;
+body.londonafols .socialmedia .minifigs {
+  padding: 0;
+  margin: 0 1.5em 0 0;
 }
-
+body.londonafols .socialmedia .container {
+  width: auto;
+}
+body.londonafols .socialmedia .container > div {
+  width: auto;
+}
+body.londonafols .socialmedia .container p {
+  margin-top: 1.5em;
+  width: auto;
+}
+body.londonafols .socialmedia .container .container.buttons .btn-title > .container {
+  margin-top: 1em;
+  margin-right: 1.5em;
+}
+body.londonafols .socialmedia .container .container.buttons .twitter {
+  clear: left;
+}
 body.londonafols .spinner .glyphicon-refresh {
-    display: inline-block;
-
-    -webkit-animation: spin 1000ms infinite linear;
-    animation: spin 1000ms infinite linear;
+  display: inline-block;
+  -webkit-animation: spin 1000ms infinite linear;
+  animation: spin 1000ms infinite linear;
 }
-
 body.londonafols .disclaimer {
-    font-size: x-small;
-    margin-bottom: 2em;
+  padding: 0 80px;
+  font-size: 8pt;
+  margin: 4em 0 2em 0;
 }
-
 body.londonafols .lego-reserved {
-    position: relative;
-    font-size: 40%;
-    vertical-align: baseline;
-    top: -1.2em;
+  position: relative;
+  font-size: 40%;
+  vertical-align: baseline;
+  top: -1.2em;
 }
-
 body.londonafols .carousel .glyphicon {
-    font-size: large;
+  font-size: 14pt;
 }
-
 body.londonafols .where-and-when {
-    padding-top: 10px;
+  padding-top: 16px;
 }
-
 body.londonafols .address span {
-    display: block;
-    margin-left: 5px;
+  display: block;
+  margin-left: 5px;
 }
-
 @-webkit-keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg);
-    }
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
 }
-
 @keyframes spin {
-    0% {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    100% {
-        -webkit-transform: rotate(359deg);
-        transform: rotate(359deg);
-    }
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
 }
-
-@media screen and (max-width:768px) {
-    body.londonafols .jumbotron {
-        padding-bottom: 0;
-        margin-bottom: 0;
-    }
-
-    body.londonafols .jumbotron .logo {
-        width: 250px;
-        position: relative;
-        margin-right: auto;
-        margin-left: auto;
-    }
-
-    body.londonafols .jumbotron .blurb {
-        font-size: medium;
-        padding: 15px 45px;
-    }
-
-    body.londonafols .jumbotron .tagline {
-        margin-top: 30px;
-        text-align: center;
-    }
-
-    body.londonafols .joinus, body.londonafols .nextmeetup, body.londonafols .meetup .sitename, body.londonafols .facebook, body.londonafols .twitter, body.londonafols .flickr {
-        display: none;
-    }
-
-    body.londonafols .meetup {
-        margin-top: 75px;
-    }
-
-    body.londonafols .disclaimer {
-        padding-top: 50px;
-    }
-
-    body.londonafols .jumbotron .tagline li:after {
-        content: ".";
-    }
-
-    body.londonafols .minifigs {
-        padding-left: 30px;
-    }
+@media screen and (max-width: 768px) {
+  body.londonafols .jumbotron {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  body.londonafols .jumbotron .blurb {
+    padding: 0 60px;
+  }
+  body.londonafols .jumbotron .blurb p {
+    font-size: 12pt;
+  }
+  body.londonafols .jumbotron .tagline {
+    margin-top: 1em;
+    font-size: 18pt;
+    text-align: center;
+  }
+  body.londonafols .jumbotron .banner {
+    padding: 0 80px;
+    text-align: center;
+  }
+  body.londonafols .jumbotron .banner .logo {
+    width: 220px;
+    padding: 0;
+    margin-right: 0;
+    display: inline-block;
+  }
+  body.londonafols .joinus {
+    padding: 0 60px;
+  }
+  body.londonafols .joinus h1 {
+    font-size: 14pt;
+  }
+  body.londonafols .nextmeetup {
+    padding: 0 60px;
+  }
+  body.londonafols .nextmeetup .carousel .item .address,
+  body.londonafols .nextmeetup .carousel .item .when {
+    margin-right: 0em;
+  }
+  body.londonafols .disclaimer {
+    padding: 0 60px;
+  }
+  body.londonafols .socialmedia .minifigs {
+    padding: 0;
+    margin: 0;
+  }
+  body.londonafols .socialmedia .container {
+    text-align: center;
+    width: 100%;
+  }
+  body.londonafols .socialmedia .container > div {
+    width: auto;
+  }
+  body.londonafols .socialmedia .container p {
+    margin-top: 1.5em;
+    text-align: center;
+    width: 100%;
+  }
+  body.londonafols .socialmedia .container .container.buttons {
+    clear: both;
+    text-align: center;
+    width: 100%;
+  }
+  body.londonafols .socialmedia .container .container.buttons .btn-title {
+    margin-top: 1em;
+  }
+  body.londonafols .socialmedia .container .container.buttons .btn-title > .container {
+    margin-top: 1em;
+  }
 }
-
-@media screen and (min-width:412px) and (max-width:768px) {
-    body.londonafols .minifigs {
-        padding-left: 45px;
-    }
-}
-
-@media screen and (min-width:768px) {
-    body.londonafols .jumbotron {
-        padding-top: 24px;
-        padding-bottom: 12px;
-        margin-bottom: 0;
-    }
-
-    body.londonafols .jumbotron .logo {
-        padding-right: 30px;
-        margin-top: 48px;
-    }
-
-    body.londonafols .jumbotron .blurb {
-        margin-top: 12px;
-        padding: 15px 30px;
-    }
-
-    body.londonafols .jumbotron .blurb > div {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    body.londonafols .joinus {
-        padding-left: 0px;
-    }
-
-    body.londonafols .joinus h1 {
-        margin-top: 0;
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    body.londonafols .nextmeetup .container {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    body.londonafols .nextmeetup .carousel-container {
-        height: 250px;
-        padding-left: 0;
-    }
-
-    body.londonafols .nextmeetup .glyphicon-refresh {
-        font-size: 32pt;
-    }
-
-    body.londonafols .nextmeetup .learnmore {
-        margin-top: 20px;
-    }
-
-    body.londonafols .nextmeetup .spinner {
-        position: absolute;
-        top: 50px;
-    }
-
-    body.londonafols .nextmeetup .carousel {
-        padding-left: 0;
-        padding-right: 0;
-        position: relative;
-    }
-
-    body.londonafols .nextmeetup .carousel .item {
-        height: 200px;
-        padding: 0px;
-    }
-
-    body.londonafols .nextmeetup .carousel .item .row {
-        margin-left: 0px;
-    }
-
-    body.londonafols .carousel-indicators {
-        bottom: 0px;
-    }
-
-    body.londonafols .socialmedia {
-        padding: 30px 0;
-    }
-
-    body.londonafols .socialmedia .btn {
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    body.londonafols .socialmedia .btn-title {
-        font-size: larger;
-    }
-}
-
-@media screen and (max-width:992px) {
-
-    body.londonafols .jumbotron .blurb p {
-        display: inline;
-        font-size: medium;
-    }
-
-    body.londonafols .joinus h1 {
-        margin-top: 0px;
-        margin-left: 10px;
-    }
-}
-
-@media screen and (min-width:768px) and (max-width:992px) {
-    body.londonafols .jumbotron .logo {
-        margin-top: 10px;
-    }
-
-    body.londonafols .jumbotron .tagline {
-        font-size: 32px;
-        padding-left: 0;
-    }
-
-    body.londonafols .jumbotron .tagline ul {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    body.londonafols .jumbotron .blurb {
-        margin-top: 12px;
-    }
-}
-
-@media screen and (min-width:992px) {
-    body.londonafols .jumbotron .tagline {
-        font-size: 63px;
-        padding-left: 0;
-    }
-
-    body.londonafols .jumbotron .tagline li {
-        margin-bottom: -15px;
-    }
-
-    body.londonafols .jumbotron .tagline li:after {
-        content: ".";
-    }
+@media screen and (min-width: 992px) {
+  body.londonafols .jumbotron {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  body.londonafols .jumbotron .blurb {
+    padding: 0;
+  }
+  body.londonafols .jumbotron .tagline {
+    font-size: 36pt;
+  }
+  body.londonafols .jumbotron .banner {
+    padding: 0;
+  }
+  body.londonafols .jumbotron .banner .logo {
+    width: 25%;
+    margin: 0;
+    text-align: right;
+  }
+  body.londonafols .jumbotron .banner .logo img {
+    width: 220px;
+    padding: 0;
+    display: inline-block;
+    margin-right: 24px;
+  }
+  body.londonafols .joinus {
+    padding: 0;
+    margin-left: 25%;
+  }
+  body.londonafols .nextmeetup {
+    padding: 0;
+  }
+  body.londonafols .nextmeetup > .container {
+    margin-left: 25%;
+  }
+  body.londonafols .disclaimer {
+    padding: 0;
+  }
+  body.londonafols .socialmedia {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  body.londonafols .socialmedia .minifigs {
+    padding-right: 24px;
+  }
+  body.londonafols .socialmedia .container p {
+    text-align: right;
+    margin: 0;
+    width: 25%;
+  }
+  body.londonafols .socialmedia .container .container.buttons .twitter {
+    clear: none;
+  }
 }
