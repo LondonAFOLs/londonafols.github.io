@@ -280,7 +280,82 @@ body.londonafols .address span {
     transform: rotate(359deg);
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 400px) {
+  body.londonafols .jumbotron {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  body.londonafols .jumbotron .blurb {
+    padding: 0 30px;
+  }
+  body.londonafols .jumbotron .blurb p {
+    font-size: 12pt;
+  }
+  body.londonafols .jumbotron .tagline {
+    margin-top: 1em;
+    font-size: 18pt;
+    text-align: center;
+  }
+  body.londonafols .jumbotron .banner {
+    padding: 0;
+    text-align: center;
+  }
+  body.londonafols .jumbotron .banner .logo {
+    width: 220px;
+    padding: 0;
+    margin-right: 0;
+    display: inline-block;
+    text-align: center;
+  }
+  body.londonafols .joinus {
+    padding: 0 30px;
+  }
+  body.londonafols .joinus h1 {
+    font-size: 14pt;
+  }
+  body.londonafols .nextmeetup {
+    padding: 0 30px;
+  }
+  body.londonafols .nextmeetup .carousel .item .address,
+  body.londonafols .nextmeetup .carousel .item .when {
+    margin-right: 0em;
+  }
+  body.londonafols .disclaimer {
+    padding: 0 30px;
+  }
+  body.londonafols .socialmedia {
+    padding: 0 30px;
+  }
+  body.londonafols .socialmedia .container {
+    text-align: center;
+    width: 100%;
+  }
+  body.londonafols .socialmedia .container > div {
+    width: auto;
+  }
+  body.londonafols .socialmedia .container p {
+    margin-top: 1.5em;
+    text-align: center;
+    width: 100%;
+  }
+  body.londonafols .socialmedia .container p.minifigs {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  body.londonafols .socialmedia .container .container.buttons {
+    clear: both;
+    text-align: center;
+    width: 100%;
+  }
+  body.londonafols .socialmedia .container .container.buttons .btn-title {
+    margin-top: 1em;
+  }
+  body.londonafols .socialmedia .container .container.buttons .btn-title > .container {
+    margin-top: 1em;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 768px) {
   body.londonafols .jumbotron {
     padding-bottom: 0;
     margin-bottom: 0;
@@ -297,7 +372,7 @@ body.londonafols .address span {
     text-align: center;
   }
   body.londonafols .jumbotron .banner {
-    padding: 0 80px;
+    padding: 0 60px;
     text-align: center;
   }
   body.londonafols .jumbotron .banner .logo {
@@ -305,6 +380,7 @@ body.londonafols .address span {
     padding: 0;
     margin-right: 0;
     display: inline-block;
+    text-align: center;
   }
   body.londonafols .joinus {
     padding: 0 60px;
@@ -322,9 +398,8 @@ body.londonafols .address span {
   body.londonafols .disclaimer {
     padding: 0 60px;
   }
-  body.londonafols .socialmedia .minifigs {
-    padding: 0;
-    margin: 0;
+  body.londonafols .socialmedia {
+    padding: 0 60px;
   }
   body.londonafols .socialmedia .container {
     text-align: center;
@@ -337,6 +412,14 @@ body.londonafols .address span {
     margin-top: 1.5em;
     text-align: center;
     width: 100%;
+  }
+  body.londonafols .socialmedia .container p.minifigs {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+  }
+  body.londonafols .socialmedia .container p.minifigs img {
+    display: inline-block;
   }
   body.londonafols .socialmedia .container .container.buttons {
     clear: both;
@@ -392,13 +475,13 @@ body.londonafols .address span {
     padding-left: 0;
     padding-right: 0;
   }
-  body.londonafols .socialmedia .minifigs {
-    padding-right: 24px;
-  }
   body.londonafols .socialmedia .container p {
     text-align: right;
     margin: 0;
     width: 25%;
+  }
+  body.londonafols .socialmedia .container p.minifigs {
+    padding-right: 24px;
   }
   body.londonafols .socialmedia .container .container.buttons .twitter {
     clear: none;

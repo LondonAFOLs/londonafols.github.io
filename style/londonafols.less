@@ -251,9 +251,92 @@ body.londonafols {
 		}
 	}
 
+	// Really narrow mobile device, up to 400px: single column
+
+	@media screen and (max-width: 400px) {
+		@extraNarrowSideEdgesPadding: 30px;
+		.jumbotron {
+			padding-bottom: 0;
+			margin-bottom: 0;
+			.blurb {
+				padding: 0 @extraNarrowSideEdgesPadding;
+				p {
+					font-size: @standardFontSize;
+				}
+			}
+			.tagline {
+				margin-top: 1em;
+				font-size: (@standardFontSize + 6pt);
+				text-align: center;
+			}
+			.banner {
+				padding: 0;
+				text-align: center;
+				.logo {
+					width: 220px;
+					padding: 0;
+					margin-right: 0;
+					display: inline-block;
+					text-align: center;
+				}
+			}
+		}
+		.joinus {
+			padding: 0 @extraNarrowSideEdgesPadding;
+			h1{
+				font-size: (@standardFontSize + 2pt);
+			}
+		}
+		.nextmeetup {
+			padding: 0 @extraNarrowSideEdgesPadding;
+			.carousel{
+				.item{
+					.address, .when{
+						margin-right: 0em;
+					}
+				}
+			}
+		}
+		.disclaimer {
+			padding: 0 @extraNarrowSideEdgesPadding;
+		}
+
+		.socialmedia{
+			padding: 0 @extraNarrowSideEdgesPadding;
+			.container{
+				text-align: center;
+				width: 100%;
+				> div{
+					width: auto;
+				}
+				p {
+					margin-top: 1.5em;
+					text-align: center;
+					width: 100%;
+				}
+				p.minifigs {
+					text-align: center;
+					padding: 0;
+					margin: 0;
+				}
+				.container.buttons{
+					clear: both;
+					text-align: center;
+					width: 100%;
+					.btn-title{
+						margin-top: 1em;
+						> .container{
+							margin-top: 1em;
+						}
+					}
+				}
+			}
+		}
+	}
+
 	// Mobile device and narrow window layout, up to 768px wide: single column
 
-	@media screen and (max-width: 768px) {
+	@media screen and (min-width: 400px) and (max-width: 768px) {
 		@mobileSideEdgesPadding: 60px;
 		.jumbotron {
 			padding-bottom: 0;
@@ -270,13 +353,14 @@ body.londonafols {
 				text-align: center;
 			}
 			.banner {
-				padding: 0 @standardSideEdgesPadding;
+				padding: 0 @mobileSideEdgesPadding;
 				text-align: center;
 				.logo {
 					width: 220px;
 					padding: 0;
 					margin-right: 0;
 					display: inline-block;
+					text-align: center;
 				}
 			}
 		}
@@ -301,10 +385,7 @@ body.londonafols {
 		}
 
 		.socialmedia{
-			.minifigs {
-				padding: 0;
-				margin: 0;
-			}
+			padding: 0 @mobileSideEdgesPadding;
 			.container{
 				text-align: center;
 				width: 100%;
@@ -315,6 +396,14 @@ body.londonafols {
 					margin-top: 1.5em;
 					text-align: center;
 					width: 100%;
+				}
+				p.minifigs {
+					text-align: center;
+					padding: 0;
+					margin: 0;
+					img{
+						display: inline-block;
+					}
 				}
 				.container.buttons{
 					clear: both;
@@ -329,7 +418,6 @@ body.londonafols {
 				}
 			}
 		}
-		
 	}
 
 	// Wide layout > 992px
@@ -375,14 +463,14 @@ body.londonafols {
 		.socialmedia {
 			padding-left: 0;
 			padding-right: 0;
-			.minifigs{
-				padding-right: 24px;
-			}
 			.container {
 				p {
 					text-align: right;
 					margin: 0;
 					width: 25%;
+				}
+				p.minifigs{
+					padding-right: 24px;
 				}
 				.container.buttons {
 					.twitter {
