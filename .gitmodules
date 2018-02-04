@@ -1,3 +1,6 @@
 [submodule "MOCs"]
 	path = MOCs
 	url = https://github.com/LondonAFOLs/MOCs.git
+[submodule "Wiki"]
+	path = Wiki
+	url = https://github.com/LondonAFOLs/londonafols.github.io.wiki.git
