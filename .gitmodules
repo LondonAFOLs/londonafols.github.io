@@ -4,3 +4,6 @@
 [submodule "Wiki"]
 	path = Wiki
 	url = https://github.com/LondonAFOLs/londonafols.github.io.wiki.git
+[submodule "blog"]
+	path = blog
+	url = https://github.com/LondonAFOLs/Blog.git
