@@ -13,11 +13,8 @@ define(function (require) {
     }
 
     function addMeetups(meetups) {
-        console.dir(meetups);
         for (var i = 0; i < meetups.length; i++) {
-            if (isVisible(meetups[i])) {
-                addMeetup(meetups[i], i);
-            }
+            addMeetup(meetups[i], i);
         }
 
         $carousel.removeClass('hidden');
@@ -26,17 +23,9 @@ define(function (require) {
 
     function addMeetup(meetup, index) {
         var name = meetup.name;
-        if (name.indexOf('Lego') == 0) {
-            name = name.substring(4).trim();
-        }
         var link = meetup.link;
         var venue = meetup.venue;
-        if (venue.name === "TBC") {
-            venue.name = "To be confirmed";
-        }
         var start = new Date(meetup.time);
-        var finish = new Date(meetup.time + meetup.duration);
-
         if (name && link) {
             var $indicator = $('<li></li>');
             $indicator.attr('data-target', $carousel.attr('id'));
@@ -50,17 +39,15 @@ define(function (require) {
 
             $whereWhenRow.append($('<div class="col-md-1 col-sm-1"><span class="glyphicon glyphicon-map-marker"></span></div>'));
             var $address = $('<div class="address col-md-4 col-sm-4" itemscope itemtype="http://schema.org/PostalAddress"></div>');
-            if (isPublic(meetup)) {
-                $address.append($('<span class="name" itemprop="name"></span>').text(venue.name));
-                if (venue.address_1) {
-                    $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_1));
-                }
-                if (venue.address_2) {
-                    $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_2));
-                }
-                if (venue.address_3) {
-                    $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_3));
-                }
+            $address.append($('<span class="name" itemprop="name"></span>').text(venue.name));
+            if (venue.address_1) {
+                $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_1));
+            }
+            if (venue.address_2) {
+                $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_2));
+            }
+            if (venue.address_3) {
+                $address.append($('<span class="address" itemprop="streetAddress"></span>').text(venue.address_3));
             }
             if (venue.city) {
                 $address.append($('<span class="city" itemprop="addressLocality"></span>').text(venue.city));
@@ -68,7 +55,8 @@ define(function (require) {
             $whereWhenRow.append($address);
 
             $whereWhenRow.append($('<div class="col-md-1 col-sm-1"><span class="glyphicon glyphicon-time"></span></div>'));
-            var $when = $('<div class="when col-md-4 col-sm-4"></div>').text(start);
+            var options = { weekday: 'long', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Europe/London' };
+            var $when = $('<div class="when col-md-4 col-sm-4"></div>').text(start.toLocaleString('en-UK', options));
             $whereWhenRow.append($when);
 
             var $learnMoreRow = $('<div class="row"></div>')
@@ -80,7 +68,7 @@ define(function (require) {
             $item.append($whereWhenRow);
             $item.append($learnMoreRow);
 
-            if (index == 0) {
+            if (index === 0) {
                 $indicator.addClass('active');
                 $item.addClass('active');
             }
@@ -90,26 +78,13 @@ define(function (require) {
         }
     }
 
-    function isVisible(meetup) {
-        return isPublic(meetup) || isPublicLimited(meetup);
-    }
-
-    function isPublic(meetup) {
-        return meetup.visibility && meetup.visibility === "public";
-    }
-
-    function isPublicLimited(meetup) {
-        return meetup.visibility && meetup.visibility === "public_limited";
-    }
-
     $.ajax({
         action: 'GET',
-        url: 'https://api.meetup.com/LondonAFOLs/events?sig_id=9923731&sig=ac774667b4e63e0ecabd772bf30b08e84ed3c34d',
-        jsonp: 'callback',
-        dataType: 'jsonp'
+        url: './events.json',
+        dataType: 'json'
     }).done(function(response) {
-        if (response.data && response.data.length && _.filter(response.data, isVisible).length) {
-            addMeetups(response.data);
+        if (response.length) {
+            addMeetups(response);
         } else {
             addNoMeetups();
         }
