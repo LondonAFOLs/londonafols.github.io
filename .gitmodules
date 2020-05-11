@@ -1,9 +1,9 @@
 [submodule "mocs"]
 	path = mocs
-	url = https://github.com/LondonAFOLs/MOCs.git
+	url = https://github.com/LondonAFOLs/mocs.git
 [submodule "blog"]
 	path = blog
-	url = https://github.com/LondonAFOLs/Blog.git
+	url = https://github.com/LondonAFOLs/blog.git
 [submodule "wiki"]
 	path = wiki
 	url = https://github.com/LondonAFOLs/londonafols.github.io.wiki.git
