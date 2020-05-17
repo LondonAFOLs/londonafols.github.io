@@ -1,17 +1,9 @@
 [
     {
-        "name": "Lego Meetup - May 2020 - Home Build Challenge",
-        "link": "https://www.meetup.com/LondonAFOLs/events/268436150/",
-        "venue": {
-            "name": "Online"
-        },
-        "time": 1589221800000
-    },
-    {
-        "name": "Lego Meetup - June 2020 - TBD",
+        "name": "Lego Meetup - June 8, 2020 - Minifig Habitats",
         "link": "https://www.meetup.com/LondonAFOLs/events/268436477/",
         "venue": {
-            "name": "TBD"
+            "name": "Online"
         },
         "time": 1591641000000
     }
