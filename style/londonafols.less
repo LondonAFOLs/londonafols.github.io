@@ -1,483 +1,436 @@
 // Bootstrap Padding Overrides
 
-.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, 
-.col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, 
-.col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, 
-.col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, 
-.col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, 
-.col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, 
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4,
+.col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10,
+.col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
+.col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12,
+.col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8,
+.col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3,
 .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
-	min-height: 1px;
-	padding-left: 0;
-	padding-right: 0;
-	position: relative;
+  min-height: 1px;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
 }
 
 .container {
-	padding: 0;
-	width: auto;
+  padding: 0;
+  width: auto;
 }
 
-// London AFOLs main styling starts here
+// London AFOLs main styling
+
+// Colours
+@darkGrey: #444;
+@buttonRedCol: #E70128;
+@buttonRedBaseCol: #ba0909;
+@buttonRedHiliteCol: darken(@buttonRedCol, 5%);
+@buttonRedHiliteBaseCol: darken(@buttonRedBaseCol, 5%);
+@deepBlueCol: #021799;
+
+@darkerDeepBlueCol: darken(@deepBlueCol, 10%);
+@lighterDeepBlueCol: #3647ae;
+@midBlueCol: #7e89cb;
+@lightBlueCol: #c8cfea;
+@veryLightRedCol: #ffd8d9;
+@veryLightGrey: #efefef;
+@breadcrumbArrowLightBlueCol: #a6b3ff;
+
+// Sizes
+@mobileWidth: 620px;
+@phabletWidth: 770px;
+@tabletWidth: 1024px;
+@widePageEdges: 10.9%;
+
+@standardFontSize: 12pt;
+@standardSideEdgesPadding: 80px;
+
+@extraNarrowSideEdgesPadding: 30px;
+@mobileSideEdgesPadding: 60px;
 
 body.londonafols {
-	@standardFontSize: 12pt;
-	@standardSideEdgesPadding: 80px;
-	@buttonRedCol: #E70128;
-	@deepBlueCol: #021799;
-	margin: 0;
-	padding: 0;
-	font-size: @standardFontSize;
-	p {
-		margin: 0 0 0.6em 0;
-		padding: 0;
-	}
-	h1, h2, h3, h4, h5, h6 {
-		margin: 0;
-		padding: 0;
-		font-size: @standardFontSize;
-	}
-	ul{
-		margin: 0;
-		padding: 0;
-		li {
-			margin: 0;
-			padding: 0;
-		}
-	}
-	.joinus{
-		margin: 3em 0 0.6em 0;
-		padding: 0 @standardSideEdgesPadding;
-		h1 {
-			font-size: (@standardFontSize + 4pt);
-			margin: 0;
-		}
-	}
-	.row {
-		padding: 0;
-		margin-left: 0;
-		margin-right: 0;
-	}
-	.btn-primary {
-		background: @buttonRedCol none;
-		border: none;
-		&:hover {
-			background: darken(@buttonRedCol, 10%);
-		}
-	}
-	.jumbotron {
-		margin: 1.5em 0 0 0;
-		padding: 0;
-		width: 100%;
-		.banner {
-			padding: 0 @standardSideEdgesPadding;
-			.logo {
-				width: 268px;
-				padding: 0;
-				margin-right: 10px;
-				text-align: left;
-			}
-		}
-		.blurb {
-			margin-top: 1em;
-			padding: 0 @standardSideEdgesPadding;
-			p {
-				font-size: (@standardFontSize + 2pt);
-				line-height: 130%;
-			}
-		}
-		background: white;
-		.tagline {
-			width: auto;
-			list-style-type: none;
-			font-weight: 500;
-			font-size: (@standardFontSize * 2);
-			li{
-				margin: 0;
-				padding: 0;
-				&:after {
-					content: ".";
-				}
-			}
+  margin: 0;
+  padding: 0;
+  font-size: @standardFontSize;
 
-		}
-	}
-	.nextmeetup {
-		@carouselIndicatorBarHeight: 40px;
-		padding: 0 @standardSideEdgesPadding;
-		background-color: @deepBlueCol;
-		color: white;
-		position: relative;
-		.carousel-container {
-			position: relative;
-			padding: 0 0 @carouselIndicatorBarHeight 0;
-		}
-		.carousel-indicators {
-			position: absolute;
-			margin: 0;
-			padding: 0;
-			left: 0;
-			bottom: ((@carouselIndicatorBarHeight - 10) * -1);
-			text-align: center;
-			width: 100%;
-		}
-		.glyphicon-refresh {
-			font-size: 3em;
-		}
-		.learnmore {
-			margin-top: 20px;
-		}
-		.spinner {
-			position: absolute;
-			left: 0;
-			top: 50px;
-		}
-		.carousel {
-			padding-left: 0;
-			padding-right: 0;
-			position: relative;
-			.item{
-				min-height: 220px;
-				padding: 0;
-				.row{
-					margin-left: 0px;
-				}
-				h2.row{
-					margin-top: 1em;
-					font-size: (@standardFontSize + 4pt);
-				}
-				.col-md-1.col-sm-1{
-					display: inline-block;
-					float: left;
-					clear: both;
-					width: auto;
-					text-align: left;
-					margin-right: 0.3em;
-				}
-				.address, .when{
-					text-align: left;
-					display: inline-block;
-					float: left;
-					width: auto;
-					max-width: 80%;
-					margin: 0 3em 1em 0;
-					span{
-						display: inline-block;
-						width: auto;
-						margin: 0;
-					}
-				}
-			}
-		}
-	}
+  p {
+    margin: 0 0 0.6em 0;
+    padding: 0;
+  }
 
-	.socialmedia {
-		margin: 2em 0 0 0;
-		padding: 0 @standardSideEdgesPadding;
-		color: black;
-		background-color: white;
-		.minifigs {
-			padding: 0;
-			margin: 0 1.5em 0 0;
-		}
-		.container{
-			width: auto;
-			> div{
-				width: auto;
-			}
-			p {
-				margin-top: 1.5em;
-				width: auto;
-			}
-			.container.buttons{
-				.btn-title{
-					> .container{
-						margin-top: 1em;
-						margin-right: 1.5em;
-					}
-				}
-				.twitter{
-					clear: left;
-				}
-			}
-		}
-	}
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-size: @standardFontSize;
+  }
 
-	.spinner .glyphicon-refresh {
-		display: inline-block;
+  h1 {
+    text-align: center;
+    font-size: (@standardFontSize * 1.5);
+    margin: 0.5em 0 0.5em 0;
+  }
 
-		-webkit-animation: spin 1000ms infinite linear;
-		animation: spin 1000ms infinite linear;
-	}
-	.disclaimer {
-		padding: 0 @standardSideEdgesPadding;
-		font-size: (@standardFontSize - 4pt);
-		margin: 4em 0 2em 0;
-	}
-	.lego-reserved {
-		position: relative;
-		font-size: 40%;
-		vertical-align: baseline;
-		top: -1.2em;
-	}
-	.carousel .glyphicon {
-		font-size: (@standardFontSize + 2pt);
-	}
-	.where-and-when {
-		padding-top: 16px;
-	}
-	.address span {
-		display: block;
-		margin-left: 5px;
-	}
-	@-webkit-keyframes spin {
-		0% {
-			-webkit-transform: rotate(0deg);
-			transform: rotate(0deg);
-		}
-		100% {
-			-webkit-transform: rotate(359deg);
-			transform: rotate(359deg);
-		}
-	}
-	@keyframes spin {
-		0% {
-			-webkit-transform: rotate(0deg);
-			transform: rotate(0deg);
-		}
-		100% {
-			-webkit-transform: rotate(359deg);
-			transform: rotate(359deg);
-		}
-	}
+  ul {
+    margin: 0;
+    padding: 0;
+    li {
+      margin: 0;
+      padding: 0;
+    }
+  }
 
-	// Really narrow mobile device, up to 400px: single column
+  .row {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
 
-	@media screen and (max-width: 400px) {
-		@extraNarrowSideEdgesPadding: 30px;
-		.jumbotron {
-			padding-bottom: 0;
-			margin-bottom: 0;
-			.blurb {
-				padding: 0 @extraNarrowSideEdgesPadding;
-				p {
-					font-size: @standardFontSize;
-				}
-			}
-			.tagline {
-				margin-top: 1em;
-				font-size: (@standardFontSize + 6pt);
-				text-align: center;
-			}
-			.banner {
-				padding: 0;
-				text-align: center;
-				.logo {
-					width: 220px;
-					padding: 0;
-					margin-right: 0;
-					display: inline-block;
-					text-align: center;
-				}
-			}
-		}
-		.joinus {
-			padding: 0 @extraNarrowSideEdgesPadding;
-			h1{
-				font-size: (@standardFontSize + 2pt);
-			}
-		}
-		.nextmeetup {
-			padding: 0 @extraNarrowSideEdgesPadding;
-			.carousel{
-				.item{
-					.address, .when{
-						margin-right: 0em;
-					}
-				}
-			}
-		}
-		.disclaimer {
-			padding: 0 @extraNarrowSideEdgesPadding;
-		}
+  .btn-primary {
+    background: @buttonRedCol none;
+    border: none;
+    &:hover {
+      background: darken(@buttonRedCol, 10%);
+    }
+  }
 
-		.socialmedia{
-			padding: 0 @extraNarrowSideEdgesPadding;
-			.container{
-				text-align: center;
-				width: 100%;
-				> div{
-					width: auto;
-				}
-				p {
-					margin-top: 1.5em;
-					text-align: center;
-					width: 100%;
-				}
-				p.minifigs {
-					text-align: center;
-					padding: 0;
-					margin: 0;
-				}
-				.container.buttons{
-					clear: both;
-					text-align: center;
-					width: 100%;
-					.btn-title{
-						margin-top: 1em;
-						> .container{
-							margin-top: 1em;
-						}
-					}
-				}
-			}
-		}
-	}
+  .jumbotron {
+    margin: 1.5em 0 0 0;
+    padding: 0;
+    width: 100%;
+    background: white;
 
-	// Mobile device and narrow window layout, up to 768px wide: single column
+    .banner {
+      padding: 0;
+      text-align: center;
+      .logo {
+        width: 220px;
+        padding: 0;
+        margin-right: 0;
+        display: inline-block;
+        text-align: center;
+      }
+    }
 
-	@media screen and (min-width: 400px) and (max-width: 768px) {
-		@mobileSideEdgesPadding: 60px;
-		.jumbotron {
-			padding-bottom: 0;
-			margin-bottom: 0;
-			.blurb {
-				padding: 0 @mobileSideEdgesPadding;
-				p {
-					font-size: @standardFontSize;
-				}
-			}
-			.tagline {
-				margin-top: 1em;
-				font-size: (@standardFontSize + 6pt);
-				text-align: center;
-			}
-			.banner {
-				padding: 0 @mobileSideEdgesPadding;
-				text-align: center;
-				.logo {
-					width: 220px;
-					padding: 0;
-					margin-right: 0;
-					display: inline-block;
-					text-align: center;
-				}
-			}
-		}
-		.joinus {
-			padding: 0 @mobileSideEdgesPadding;
-			h1{
-				font-size: (@standardFontSize + 2pt);
-			}
-		}
-		.nextmeetup {
-			padding: 0 @mobileSideEdgesPadding;
-			.carousel{
-				.item{
-					.address, .when{
-						margin-right: 0em;
-					}
-				}
-			}
-		}
-		.disclaimer {
-			padding: 0 @mobileSideEdgesPadding;
-		}
+    .blurb {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      padding: 0 @standardSideEdgesPadding;
+      p {
+        font-size: (@standardFontSize + 2pt);
+        line-height: 130%;
+      }
+    }
 
-		.socialmedia{
-			padding: 0 @mobileSideEdgesPadding;
-			.container{
-				text-align: center;
-				width: 100%;
-				> div{
-					width: auto;
-				}
-				p {
-					margin-top: 1.5em;
-					text-align: center;
-					width: 100%;
-				}
-				p.minifigs {
-					text-align: center;
-					padding: 0;
-					margin: 0;
-					img{
-						display: inline-block;
-					}
-				}
-				.container.buttons{
-					clear: both;
-					text-align: center;
-					width: 100%;
-					.btn-title{
-						margin-top: 1em;
-						> .container{
-							margin-top: 1em;
-						}
-					}
-				}
-			}
-		}
-	}
+    .tagline {
+      width: auto;
+      list-style-type: none;
+      font-weight: 500;
+      font-size: (@standardFontSize * 1.5);
+      color: @darkerDeepBlueCol;
+      li {
+        margin: 0;
+        padding: 0;
+        &:after {
+          content: ".";
+        }
+      }
+    }
+  }
 
-	// Wide layout > 992px
+  .nextmeetup {
+    @carouselIndicatorBarHeight: 40px;
 
-	@media screen and (min-width: 992px) {
-		.jumbotron {
-			padding-bottom: 0;
-			margin-bottom: 0;
-			.blurb {
-				padding: 0;
-			}
-			.tagline {
-				font-size: (@standardFontSize * 3);
-			}
-			.banner {
-				padding: 0;
-				.logo {
-					width: 25%;
-					margin: 0;
-					text-align: right;
-					img{
-						width: 220px;
-						padding: 0;
-						display: inline-block;
-						margin-right: 24px;
-					}
-				}
-			}
-		}
-		.joinus {
-			padding: 0;
-			margin-left: 25%;
-		}
-		.nextmeetup {
-			padding: 0;
-			> .container{
-				margin-left: 25%;
-			}
-		}
-		.disclaimer {
-			padding: 0;
-		}
-		.socialmedia {
-			padding-left: 0;
-			padding-right: 0;
-			.container {
-				p {
-					text-align: right;
-					margin: 0;
-					width: 25%;
-				}
-				p.minifigs{
-					padding-right: 24px;
-				}
-				.container.buttons {
-					.twitter {
-						clear: none;
-					}
-				}
-			}
-		}
-	}
+    padding: 0 @standardSideEdgesPadding;
+    background-color: @deepBlueCol;
+    color: white;
+    position: relative;
+
+    .minifigs {
+      margin-top: 2em;
+      text-align: right;
+    }
+
+    .carousel-container {
+      position: relative;
+      // padding: 0 0 @carouselIndicatorBarHeight 0;
+    }
+
+    .carousel-indicators {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      left: 0;
+      // bottom: ((@carouselIndicatorBarHeight - 10) * -1);
+      text-align: center;
+      width: 100%;
+    }
+
+    .glyphicon-refresh {
+      font-size: 3em;
+    }
+
+    .learnmore {
+      margin-top: 20px;
+    }
+
+    .spinner {
+      position: absolute;
+      left: 0;
+      top: 50px;
+    }
+
+    .carousel {
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+
+      .item {
+        min-height: 220px;
+        padding: 0;
+
+        .row {
+          margin-left: 0px;
+        }
+
+        h2.row {
+          margin-top: 2em;
+          font-size: (@standardFontSize * 1.25);
+        }
+
+        .col-md-1.col-sm-1 {
+          display: inline-block;
+          float: left;
+          clear: both;
+          width: auto;
+          text-align: left;
+          margin-right: 0.3em;
+        }
+
+        .address, .when {
+          text-align: left;
+          display: inline-block;
+          float: left;
+          width: auto;
+          max-width: 80%;
+          margin: 0 3em 1em 0;
+          span {
+            display: inline-block;
+            width: auto;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .online {
+    padding: 0 @standardSideEdgesPadding;
+
+    h1 {
+      color: @darkerDeepBlueCol;
+    }
+
+    .btn {
+      margin-bottom: 1pt;
+    }
+  }
+
+  .spinner .glyphicon-refresh {
+    display: inline-block;
+    -webkit-animation: spin 1000ms infinite linear;
+    animation: spin 1000ms infinite linear;
+  }
+
+  .disclaimer {
+    padding: 0 @standardSideEdgesPadding;
+    font-size: (@standardFontSize - 4pt);
+    margin: 4em 0 2em 0;
+  }
+
+  .lego-reserved {
+    position: relative;
+    font-size: 40%;
+    vertical-align: baseline;
+    top: -1.2em;
+  }
+
+  .carousel .glyphicon {
+    font-size: (@standardFontSize + 2pt);
+  }
+
+  .where-and-when {
+    padding-top: 16px;
+  }
+
+  .address span {
+    display: block;
+    margin-left: 5px;
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+    }
+  }
+
+  @keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+    }
+  }
+
+  // Very narrow to moderately narrow mobile device, <= 770px: single column
+  @media screen and (max-width: @phabletWidth) {
+
+    .jumbotron {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      .blurb {
+        padding: 0 @extraNarrowSideEdgesPadding;
+        p {
+          font-size: @standardFontSize;
+        }
+      }
+      .tagline {
+        margin-top: 1em;
+        font-size: (@standardFontSize + 6pt);
+        text-align: center;
+      }
+    }
+
+    .nextmeetup {
+      padding: 0 @extraNarrowSideEdgesPadding;
+
+      .minifigs {
+        text-align: center;
+      }
+
+      .carousel {
+        .item {
+          .address, .when {
+            margin-right: 0em;
+          }
+        }
+      }
+    }
+
+    .online {
+      padding: 0 @extraNarrowSideEdgesPadding;
+    }
+
+    .disclaimer {
+      padding: 0 @extraNarrowSideEdgesPadding;
+    }
+  }
+
+  // Larger than a mobile device,  >= 770px
+  @media screen and (min-width: @phabletWidth) {
+    h1 {
+      text-align: left;
+    }
+
+    .jumbotron {
+      .banner {
+        text-align: left;
+      }
+    }
+
+    .nextmeetup {
+      padding: 0;
+    }
+
+    .minifigs {
+      padding-right: 24px;
+      text-align: right;
+    }
+  }
+
+  // Phablet to tablet, 770-1024px wide
+  @media screen and (min-width: @phabletWidth) and (max-width: @tabletWidth) {
+    .jumbotron {
+      padding: 0 @mobileSideEdgesPadding;
+
+      .blurb {
+        padding: 0;
+      }
+
+      .tagline {
+        padding: 0 0 0 1em;
+      }
+    }
+
+    .nextmeetup {
+      padding: 0 @mobileSideEdgesPadding;
+
+      .minifigs {
+        text-align: left;
+        width: 200px;
+      }
+
+      .carousel-container {
+        padding-left: 2em;
+      }
+    }
+
+    .online {
+      padding: 0 @mobileSideEdgesPadding;
+    }
+
+    .disclaimer {
+      padding: 0 @mobileSideEdgesPadding;
+    }
+  }
+
+  // Wide layout > 1024px
+  @media screen and (min-width: @tabletWidth) {
+    .jumbotron {
+      padding-bottom: 0;
+      margin-bottom: 0;
+
+      .banner {
+        padding: 0;
+
+        .logo {
+          width: 25%;
+          margin: 0;
+          text-align: right;
+
+          img {
+            width: 220px;
+            padding: 0;
+            display: inline-block;
+            margin-right: 24px;
+          }
+        }
+      }
+
+      .blurb {
+        padding: 0;
+      }
+    }
+
+    .nextmeetup {
+      h1 {
+        margin-left: 25%;
+      }
+    }
+    .online {
+      padding: 0;
+      margin-left: 25%;
+    }
+
+    .disclaimer {
+      padding: 0;
+    }
+  }
 }

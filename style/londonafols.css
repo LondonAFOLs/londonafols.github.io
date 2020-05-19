@@ -74,6 +74,11 @@ body.londonafols h6 {
   padding: 0;
   font-size: 12pt;
 }
+body.londonafols h1 {
+  text-align: center;
+  font-size: 18pt;
+  margin: 0.5em 0 0.5em 0;
+}
 body.londonafols ul {
   margin: 0;
   padding: 0;
@@ -81,14 +86,6 @@ body.londonafols ul {
 body.londonafols ul li {
   margin: 0;
   padding: 0;
-}
-body.londonafols .joinus {
-  margin: 3em 0 0.6em 0;
-  padding: 0 80px;
-}
-body.londonafols .joinus h1 {
-  font-size: 16pt;
-  margin: 0;
 }
 body.londonafols .row {
   padding: 0;
@@ -109,16 +106,19 @@ body.londonafols .jumbotron {
   background: white;
 }
 body.londonafols .jumbotron .banner {
-  padding: 0 80px;
+  padding: 0;
+  text-align: center;
 }
 body.londonafols .jumbotron .banner .logo {
-  width: 268px;
+  width: 220px;
   padding: 0;
-  margin-right: 10px;
-  text-align: left;
+  margin-right: 0;
+  display: inline-block;
+  text-align: center;
 }
 body.londonafols .jumbotron .blurb {
   margin-top: 1em;
+  margin-bottom: 1em;
   padding: 0 80px;
 }
 body.londonafols .jumbotron .blurb p {
@@ -129,7 +129,8 @@ body.londonafols .jumbotron .tagline {
   width: auto;
   list-style-type: none;
   font-weight: 500;
-  font-size: 24pt;
+  font-size: 18pt;
+  color: #010f67;
 }
 body.londonafols .jumbotron .tagline li {
   margin: 0;
@@ -144,16 +145,18 @@ body.londonafols .nextmeetup {
   color: white;
   position: relative;
 }
+body.londonafols .nextmeetup .minifigs {
+  margin-top: 2em;
+  text-align: right;
+}
 body.londonafols .nextmeetup .carousel-container {
   position: relative;
-  padding: 0 0 40px 0;
 }
 body.londonafols .nextmeetup .carousel-indicators {
   position: absolute;
   margin: 0;
   padding: 0;
   left: 0;
-  bottom: -30px;
   text-align: center;
   width: 100%;
 }
@@ -181,8 +184,8 @@ body.londonafols .nextmeetup .carousel .item .row {
   margin-left: 0px;
 }
 body.londonafols .nextmeetup .carousel .item h2.row {
-  margin-top: 1em;
-  font-size: 16pt;
+  margin-top: 2em;
+  font-size: 15pt;
 }
 body.londonafols .nextmeetup .carousel .item .col-md-1.col-sm-1 {
   display: inline-block;
@@ -207,32 +210,14 @@ body.londonafols .nextmeetup .carousel .item .when span {
   width: auto;
   margin: 0;
 }
-body.londonafols .socialmedia {
-  margin: 2em 0 0 0;
+body.londonafols .online {
   padding: 0 80px;
-  color: black;
-  background-color: white;
 }
-body.londonafols .socialmedia .minifigs {
-  padding: 0;
-  margin: 0 1.5em 0 0;
+body.londonafols .online h1 {
+  color: #010f67;
 }
-body.londonafols .socialmedia .container {
-  width: auto;
-}
-body.londonafols .socialmedia .container > div {
-  width: auto;
-}
-body.londonafols .socialmedia .container p {
-  margin-top: 1.5em;
-  width: auto;
-}
-body.londonafols .socialmedia .container .container.buttons .btn-title > .container {
-  margin-top: 1em;
-  margin-right: 1.5em;
-}
-body.londonafols .socialmedia .container .container.buttons .twitter {
-  clear: left;
+body.londonafols .online .btn {
+  margin-bottom: 1pt;
 }
 body.londonafols .spinner .glyphicon-refresh {
   display: inline-block;
@@ -280,7 +265,7 @@ body.londonafols .address span {
     transform: rotate(359deg);
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 770px) {
   body.londonafols .jumbotron {
     padding-bottom: 0;
     margin-bottom: 0;
@@ -296,153 +281,69 @@ body.londonafols .address span {
     font-size: 18pt;
     text-align: center;
   }
-  body.londonafols .jumbotron .banner {
-    padding: 0;
-    text-align: center;
-  }
-  body.londonafols .jumbotron .banner .logo {
-    width: 220px;
-    padding: 0;
-    margin-right: 0;
-    display: inline-block;
-    text-align: center;
-  }
-  body.londonafols .joinus {
-    padding: 0 30px;
-  }
-  body.londonafols .joinus h1 {
-    font-size: 14pt;
-  }
   body.londonafols .nextmeetup {
     padding: 0 30px;
+  }
+  body.londonafols .nextmeetup .minifigs {
+    text-align: center;
   }
   body.londonafols .nextmeetup .carousel .item .address,
   body.londonafols .nextmeetup .carousel .item .when {
     margin-right: 0em;
   }
+  body.londonafols .online {
+    padding: 0 30px;
+  }
   body.londonafols .disclaimer {
     padding: 0 30px;
   }
-  body.londonafols .socialmedia {
-    padding: 0 30px;
-  }
-  body.londonafols .socialmedia .container {
-    text-align: center;
-    width: 100%;
-  }
-  body.londonafols .socialmedia .container > div {
-    width: auto;
-  }
-  body.londonafols .socialmedia .container p {
-    margin-top: 1.5em;
-    text-align: center;
-    width: 100%;
-  }
-  body.londonafols .socialmedia .container p.minifigs {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-  }
-  body.londonafols .socialmedia .container .container.buttons {
-    clear: both;
-    text-align: center;
-    width: 100%;
-  }
-  body.londonafols .socialmedia .container .container.buttons .btn-title {
-    margin-top: 1em;
-  }
-  body.londonafols .socialmedia .container .container.buttons .btn-title > .container {
-    margin-top: 1em;
-  }
 }
-@media screen and (min-width: 400px) and (max-width: 768px) {
-  body.londonafols .jumbotron {
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
-  body.londonafols .jumbotron .blurb {
-    padding: 0 60px;
-  }
-  body.londonafols .jumbotron .blurb p {
-    font-size: 12pt;
-  }
-  body.londonafols .jumbotron .tagline {
-    margin-top: 1em;
-    font-size: 18pt;
-    text-align: center;
+@media screen and (min-width: 770px) {
+  body.londonafols h1 {
+    text-align: left;
   }
   body.londonafols .jumbotron .banner {
-    padding: 0 60px;
-    text-align: center;
+    text-align: left;
   }
-  body.londonafols .jumbotron .banner .logo {
-    width: 220px;
+  body.londonafols .nextmeetup {
     padding: 0;
-    margin-right: 0;
-    display: inline-block;
-    text-align: center;
   }
-  body.londonafols .joinus {
+  body.londonafols .minifigs {
+    padding-right: 24px;
+    text-align: right;
+  }
+}
+@media screen and (min-width: 770px) and (max-width: 1024px) {
+  body.londonafols .jumbotron {
     padding: 0 60px;
   }
-  body.londonafols .joinus h1 {
-    font-size: 14pt;
+  body.londonafols .jumbotron .blurb {
+    padding: 0;
+  }
+  body.londonafols .jumbotron .tagline {
+    padding: 0 0 0 1em;
   }
   body.londonafols .nextmeetup {
     padding: 0 60px;
   }
-  body.londonafols .nextmeetup .carousel .item .address,
-  body.londonafols .nextmeetup .carousel .item .when {
-    margin-right: 0em;
+  body.londonafols .nextmeetup .minifigs {
+    text-align: left;
+    width: 200px;
+  }
+  body.londonafols .nextmeetup .carousel-container {
+    padding-left: 2em;
+  }
+  body.londonafols .online {
+    padding: 0 60px;
   }
   body.londonafols .disclaimer {
     padding: 0 60px;
   }
-  body.londonafols .socialmedia {
-    padding: 0 60px;
-  }
-  body.londonafols .socialmedia .container {
-    text-align: center;
-    width: 100%;
-  }
-  body.londonafols .socialmedia .container > div {
-    width: auto;
-  }
-  body.londonafols .socialmedia .container p {
-    margin-top: 1.5em;
-    text-align: center;
-    width: 100%;
-  }
-  body.londonafols .socialmedia .container p.minifigs {
-    text-align: center;
-    padding: 0;
-    margin: 0;
-  }
-  body.londonafols .socialmedia .container p.minifigs img {
-    display: inline-block;
-  }
-  body.londonafols .socialmedia .container .container.buttons {
-    clear: both;
-    text-align: center;
-    width: 100%;
-  }
-  body.londonafols .socialmedia .container .container.buttons .btn-title {
-    margin-top: 1em;
-  }
-  body.londonafols .socialmedia .container .container.buttons .btn-title > .container {
-    margin-top: 1em;
-  }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1024px) {
   body.londonafols .jumbotron {
     padding-bottom: 0;
     margin-bottom: 0;
-  }
-  body.londonafols .jumbotron .blurb {
-    padding: 0;
-  }
-  body.londonafols .jumbotron .tagline {
-    font-size: 36pt;
   }
   body.londonafols .jumbotron .banner {
     padding: 0;
@@ -458,32 +359,17 @@ body.londonafols .address span {
     display: inline-block;
     margin-right: 24px;
   }
-  body.londonafols .joinus {
+  body.londonafols .jumbotron .blurb {
     padding: 0;
+  }
+  body.londonafols .nextmeetup h1 {
     margin-left: 25%;
   }
-  body.londonafols .nextmeetup {
+  body.londonafols .online {
     padding: 0;
-  }
-  body.londonafols .nextmeetup > .container {
     margin-left: 25%;
   }
   body.londonafols .disclaimer {
     padding: 0;
-  }
-  body.londonafols .socialmedia {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  body.londonafols .socialmedia .container p {
-    text-align: right;
-    margin: 0;
-    width: 25%;
-  }
-  body.londonafols .socialmedia .container p.minifigs {
-    padding-right: 24px;
-  }
-  body.londonafols .socialmedia .container .container.buttons .twitter {
-    clear: none;
   }
 }

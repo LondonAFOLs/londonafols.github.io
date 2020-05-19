@@ -34,34 +34,35 @@
     <script data-main="scripts/app" src="scripts/lib/require-2.2.0.js"></script>
   </head>
   <body class="londonafols">
-    <div class="jumbotron">
-      <div class="container">
-        <div class="row banner">
-          <div class="col-md-3 col-sm-5 logo">
-            <img src="img/logo-800x480px.png" alt="London AFOLs logo" class="img img-responsive">
-          </div>
-          <ul class="col-md-9 col-sm-7 tagline">
-            <li id="buildlego">Build LEGO<sup class="lego-reserved">®</sup></li>
-            <li id="withfriends">Make friends</li>
-            <li id="inapub"><span style="text-decoration: line-through;">In a pub.</span> At home (while social distancing)</li>
-          </ul>
+    <div class="jumbotron container">
+      <div class="row banner">
+        <div class="col-md-3 col-sm-5 logo">
+          <img src="img/logo-800x480px.png" alt="London AFOLs logo" class="img img-responsive">
         </div>
-        <div class="row blurb">
-          <div class="col-md-offset-3 col-md-9">
-            <p>We are Adult Fans of LEGO<sup class="lego-reserved">®</sup>, or AFOLs for short, based in or near London.</p>
-            <p>Once a month, we get together and play with LEGO<sup class="lego-reserved">®</sup> bricks usually in a pub in central London.</p>
-            <p>During this period of social distancing we have moved our meetings online.</p>
-            <p>Whether you live in London or are visiting from elsewhere, everyone is welcome.</p>
-          </div>
+        <ul class="col-md-9 col-sm-7 tagline">
+          <li id="buildlego">Build LEGO<sup class="lego-reserved">®</sup></li>
+          <li id="withfriends">Make friends</li>
+          <li id="inapub"><span style="text-decoration: line-through;">In a pub.</span> At home<sup>*</sup></li>
+        </ul>
+      </div>
+      <div class="row blurb">
+        <div class="col-md-offset-3 col-md-9">
+          <p>We are Adult Fans of LEGO<sup class="lego-reserved">®</sup>, or AFOLs for short, based in or near London.</p>
+          <p>Once a month, we get together and play with LEGO<sup class="lego-reserved">®</sup> bricks usually in a pub in central London.</p>
+          <p>Whether you live in London or are visiting from elsewhere, everyone is welcome.</p>
+          <p>* During this period of social distancing we have moved our meetings online.</p>
         </div>
       </div>
     </div>
-    <div class="joinus container">
-      <h1 class="col-md-offset-3 col-md-9 row">Join us at one of our next meetups:</h1>
-    </div>
-    <div class="nextmeetup">
-      <div class="container">
-        <div class="carousel-container col-md-offset-3 col-md-9 row">
+    <div class="nextmeetup container">
+      <div class="row">
+        <h1 class="col-md-offset-3 col-md-9">Join us at one of our next meetups:</h1>
+      </div>
+      <div class="row">
+        <p class="col-md-3 col-sm-5 minifigs">
+          <img src="img/afols-square.jpg" alt="London AFOLs" class="img img-circle" style="width: 200px">
+        </p>
+        <div class="carousel-container col-md-9 col-sm-7">
           <div class="spinner"><i class="glyphicon glyphicon-refresh"></i></div>
           <div id="nextmeetup-carousel" class="col-md-9 carousel slide container hidden" data-ride="carousel">
             <ol class="carousel-indicators"></ol>
@@ -70,31 +71,15 @@
         </div>
       </div>
     </div>
-    <div class="socialmedia">
-      <div class="container">
-        <p class="col-md-3 col-xs-7 minifigs">
-          <img src="img/afols-square.jpg" alt="London AFOLs" class="img img-circle" style="width: 200px">
-        </p>
-        <div class="col-md-9 col-xs-5 container buttons">
-          <div class="row btn-title">
-            <div class="container col-md-3 col-sm-4 meetup">
-              <div class="row sitename">Meetup.com</div>
-              <div class="row"><a class="btn btn-primary btn-lg" href="http://meetup.com/LondonAFOLs" target="_blank" role="button">Join us &raquo;</a></div>
-            </div>
-            <div class="container col-md-3 col-sm-6 facebook">
-              <div class="row sitename">Facebook</div>
-              <div class="row"><a class="btn btn-primary btn-lg" href="http://facebook.com/LondonAFOLs" target="_blank" role="button">Follow us &raquo;</a></div>
-            </div>
-            <div class="container col-md-3 col-sm-4 twitter">
-              <div class="row sitename">Twitter</div>
-              <div class="row"><a class="btn btn-primary btn-lg" href="http://twitter.com/LondonAFOLs" target="_blank" role="button">Follow us &raquo;</a></div>
-            </div>
-            <div class="container col-md-3 col-sm-6 flickr">
-              <div class="row sitename">Flickr</div>
-              <div class="row"><a class="btn btn-primary btn-lg" href="https://www.flickr.com/groups/2994669@N24/" target="_blank" role="button">Explore &raquo;</a></div>
-            </div>
-          </div>
-        </div>
+    <div class="online container">
+      <h1 class="row col-md-offset-3 col-md-9">Or find us online:</h1>
+      <div class="row col-md-9 buttons">
+        <a class="btn btn-primary btn-large" href="https://londonafols.uk/blog/" target="_blank" role="button">Our Blog &raquo;</a>
+        <a class="btn btn-primary btn-large" href="https://meetup.com/LondonAFOLs" target="_blank" role="button">Meetup &raquo;</a>
+        <a class="btn btn-primary btn-large" href="https://instagram.com/LondonAFOLs" target="_blank" role="button">Instagram &raquo;</a>
+        <a class="btn btn-primary btn-large" href="https://www.flickr.com/groups/2994669@N24/" target="_blank" role="button">Flickr &raquo;</a>
+        <a class="btn btn-primary btn-large" href="https://facebook.com/LondonAFOLs" target="_blank" role="button">Facebook &raquo;</a>
+        <a class="btn btn-primary btn-large" href="https://twitter.com/LondonAFOLs" target="_blank" role="button">Twitter &raquo;</a>
       </div>
     </div>
     <div class="disclaimer container">

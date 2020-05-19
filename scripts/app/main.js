@@ -9,14 +9,16 @@ define(function (require) {
     var $items = $('.carousel-inner', $carousel);
 
     function addNoMeetups() {
-        //TODO
+        $indicators.addClass('hidden');
     }
 
     function addMeetups(meetups) {
         for (var i = 0; i < meetups.length; i++) {
             addMeetup(meetups[i], i);
         }
-
+        if (meetups.length < 2) {
+          $indicators.addClass('hidden');
+        }
         $carousel.removeClass('hidden');
         $carousel.carousel();
     }
@@ -55,8 +57,8 @@ define(function (require) {
             $whereWhenRow.append($address);
 
             $whereWhenRow.append($('<div class="col-md-1 col-sm-1"><span class="glyphicon glyphicon-time"></span></div>'));
-            var options = { weekday: 'long', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Europe/London' };
-            var $when = $('<div class="when col-md-4 col-sm-4"></div>').text(start.toLocaleString('en-UK', options));
+            var options = { weekday: 'long', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Europe/London', timeZoneName: "short" };
+            var $when = $('<div class="when col-md-4 col-sm-4"></div>').text(start.toLocaleString('en-GB', options));
             $whereWhenRow.append($when);
 
             var $learnMoreRow = $('<div class="row"></div>')
