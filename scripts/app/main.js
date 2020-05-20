@@ -88,7 +88,7 @@ define(function (require) {
             var index = Math.round(Math.random() * (announcements.length - 1));
             var announcement = announcements[index];
             var $announcement = $('<a class="github-fork-ribbon"></a>');
-            $announcement.attr('href', announcement.href);
+            $announcement.attr('href', announcement.link);
             $announcement.attr('data-ribbon', announcement.title);
             $announcement.attr('title', announcement.title);
             $announcement.text(announcement.title);
