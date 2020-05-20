@@ -289,6 +289,17 @@ body.londonafols {
     }
   }
 
+  // Overrides for the announcement ribbon
+  .github-fork-ribbon:before {
+    // London AFOLs blue
+    background-color: @deepBlueCol;
+  }
+
+  .github-fork-ribbon:after {
+    // no dotted border
+    border: none;
+  }
+
   // Very narrow to moderately narrow mobile device, <= 770px: single column
   @media screen and (max-width: @phabletWidth) {
 

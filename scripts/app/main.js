@@ -1,5 +1,4 @@
 define(function (require) {
-    var self = this;
     var $ = require('jquery');
     var _bootstrap = require('bootstrap');
     var _ = require('underscore');
@@ -13,14 +12,18 @@ define(function (require) {
     }
 
     function addMeetups(meetups) {
-        for (var i = 0; i < meetups.length; i++) {
-            addMeetup(meetups[i], i);
+        if (meetups.length) {
+            for (var i = 0; i < meetups.length; i++) {
+                addMeetup(meetups[i], i);
+            }
+            if (meetups.length < 2) {
+                $indicators.addClass('hidden');
+            }
+            $carousel.removeClass('hidden');
+            $carousel.carousel();
+        } else {
+            addNoMeetups();
         }
-        if (meetups.length < 2) {
-          $indicators.addClass('hidden');
-        }
-        $carousel.removeClass('hidden');
-        $carousel.carousel();
     }
 
     function addMeetup(meetup, index) {
@@ -80,19 +83,36 @@ define(function (require) {
         }
     }
 
+    function announce(announcements) {
+        if (announcements.length) {
+            var index = Math.round(Math.random() * (announcements.length - 1));
+            var announcement = announcements[index];
+            var $announcement = $('<a class="github-fork-ribbon"></a>');
+            $announcement.attr('href', announcement.href);
+            $announcement.attr('data-ribbon', announcement.title);
+            $announcement.attr('title', announcement.title);
+            $announcement.text(announcement.title);
+            $("#announcements").append($announcement)
+        }
+    }
+
     $.ajax({
         action: 'GET',
         url: './events.json',
         dataType: 'json'
     }).done(function(response) {
-        if (response.length) {
-            addMeetups(response);
-        } else {
-            addNoMeetups();
-        }
+        addMeetups(response);
     }).fail(function() {
         addNoMeetups();
     }).always(function() {
         $('.nextmeetup .spinner').addClass('hidden');
+    });
+
+    $.ajax({
+        action: 'GET',
+        url: './announcements.json',
+        dataType: 'json'
+    }).done(function(response) {
+        announce(response);
     });
 });

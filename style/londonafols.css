@@ -373,3 +373,9 @@ body.londonafols .address span {
     padding: 0;
   }
 }
+.github-fork-ribbon:before {
+  background-color: #021799;
+}
+.github-fork-ribbon:after {
+  border: none;
+}
