@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+SITEMAP: https://londonafols.uk/sitemap.xml
+SITEMAP: https://londonafols.uk/blog/sitemap.xml
