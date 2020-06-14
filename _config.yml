@@ -1,1 +1,1 @@
-exclude: [.idea/, Gemfile, Gemfile.lock]
+exclude: [.idea/, Gemfile, Gemfile.lock, LICENSE, Readme.md]
