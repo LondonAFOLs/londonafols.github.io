@@ -1,3 +1,6 @@
+---
+# Jeckyll "front matter" to flag this file as needing template processing. Don't remove!
+---
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,9 +29,13 @@
     <meta name="msapplication-wide310x150logo" content="img/favicon/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="img/favicon/mstile-310x310.png" />
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+          crossorigin="anonymous">
     <!-- Base theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+          crossorigin="anonymous">
     <!-- Announcement ribbon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css" />
     <!-- Theme refinements -->
@@ -36,7 +43,15 @@
     <script data-main="scripts/app" src="scripts/lib/require-2.2.0.js"></script>
   </head>
   <body class="londonafols">
-    <span id="announcements"></span>
+
+    <span id="announcements">
+      {% for announcement in site.data.announcements %}
+        <a class="github-fork-ribbon" href="{{announcement.link}}" title="{{ announcement.title}}" data-ribbon="{{ announcement.title}}" hidden="hidden">
+          {{ announcement.title }}
+        </a>
+      {% endfor %}
+    </span>
+
     <div class="jumbotron container">
       <div class="row banner">
         <div class="col-md-3 col-sm-5 logo">
@@ -57,6 +72,7 @@
         </div>
       </div>
     </div>
+
     <div class="nextmeetup container">
       <div class="row">
         <h1 class="col-md-offset-3 col-md-9">Join us at one of our next meetups:</h1>
@@ -66,14 +82,60 @@
           <img src="img/afols-square.jpg" alt="London AFOLs" class="img img-circle" style="width: 200px">
         </p>
         <div class="carousel-container col-md-9 col-sm-7">
-          <div class="spinner"><i class="glyphicon glyphicon-refresh"></i></div>
-          <div id="nextmeetup-carousel" class="col-md-9 carousel slide container hidden" data-ride="carousel">
-            <ol class="carousel-indicators"></ol>
-            <div class="carousel-inner" role="listbox"></div>
+          {% assign carouselhidden = '' %}
+          {% if site.data.events.size < 1 %}
+            {% assign carouselhidden = 'hidden' %}
+          {% endif %}
+          <div id="nextmeetup-carousel" class="col-md-9 carousel slide container {{ carouselhidden }}" data-ride="carousel">
+            {% assign indicatorshidden = '' %}
+            {% if site.data.events.size < 2 %}
+              {% assign indicatorshidden = 'hidden' %}
+            {% endif %}
+            <ol class="carousel-indicators {{ indicatorshidden }}">
+              {% for event in site.data.events %}
+                {% assign active = '' %}
+                {% if forloop.first %}
+                  {% assign active = 'active' %}
+                {% endif %}
+                <li data-target="#nextmeetup-carousel" data-slide-to="{{ forloop.index0 }}" class="{{ active }}"></li>
+              {% endfor %}
+            </ol>
+            <div class="carousel-inner" role="listbox">
+              {% for event in site.data.events %}
+                {% assign name = event.name %}
+                {% assign link = event.link %}
+                {% assign venue = event.venue %}
+                {% assign start = event.schedule.start %}
+                {% assign end = event.schedule.end %}
+                {% assign active = '' %}
+                {% if forloop.first %}
+                  {% assign active = 'active' %}
+                {% endif %}
+                <div class="item {{ active }}">
+                  <h2 class="row">{{ name }}</h2>
+                  <div class="row where-and-when">
+                    <div class="col-md-1 col-sm-1">
+                      <span class="glyphicon glyphicon-map-marker"></span>
+                    </div>
+                    <div class="address col-md-4 col-sm-4" itemscope="" itemtype="http://schema.org/PostalAddress">
+                      <span class="name" itemprop="name">{{ venue.name }}</span>
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+                      <span class="glyphicon glyphicon-time"></span>
+                    </div>
+                    <div class="when col-md-4 col-sm-4">{{ start }}</div>
+                  </div>
+                  <div class="row">
+                    <a class="btn btn-primary btn-large learnmore" target="_blank" href="{{ link }}">Learn more »</a>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
           </div>
         </div>
       </div>
     </div>
+
     <div class="online container">
       <h1 class="row col-md-offset-3 col-md-9">Or find us online:</h1>
       <div class="row col-md-9 buttons">
@@ -85,6 +147,7 @@
         <a class="btn btn-primary btn-large" href="https://twitter.com/LondonAFOLs" target="_blank" role="button">Twitter &raquo;</a>
       </div>
     </div>
+
     <div class="disclaimer container">
       <div class="col-md-offset-3 col-md-9">
         LEGO ® is a trademark of the LEGO Group of companies which does not sponsor, authorize or endorse this site.<br/>
