@@ -46,7 +46,9 @@
 
     <span id="announcements">
       {% for announcement in site.data.announcements %}
-        <a class="github-fork-ribbon" href="{{announcement.link}}" title="{{ announcement.title}}" data-ribbon="{{ announcement.title}}" hidden="hidden">
+        {% assign link = announcement.link %}
+        {% assign title = announcement.title | strip_html %}
+        <a class="github-fork-ribbon" href="{{ link }}" title="{{ title }}" data-ribbon="{{ title }}" hidden="hidden">
           {{ announcement.title }}
         </a>
       {% endfor %}
@@ -102,11 +104,11 @@
             </ol>
             <div class="carousel-inner" role="listbox">
               {% for event in site.data.events %}
-                {% assign name = event.name %}
-                {% assign link = event.link %}
+                {% assign name = event.name | strip_html %}
+                {% assign link = event.link | url_encode %}
                 {% assign venue = event.venue %}
-                {% assign start = event.schedule.start %}
-                {% assign end = event.schedule.end %}
+                {% assign start = event.schedule.start | strip_html %}
+                {% assign end = event.schedule.end | strip_html %}
                 {% assign active = '' %}
                 {% if forloop.first %}
                   {% assign active = 'active' %}
@@ -118,7 +120,7 @@
                       <span class="glyphicon glyphicon-map-marker"></span>
                     </div>
                     <div class="address col-md-4 col-sm-4" itemscope="" itemtype="http://schema.org/PostalAddress">
-                      <span class="name" itemprop="name">{{ venue.name }}</span>
+                      <span class="name" itemprop="name">{{ venue.name | strip_html }}</span>
                     </div>
                     <div class="col-md-1 col-sm-1">
                       <span class="glyphicon glyphicon-time"></span>
