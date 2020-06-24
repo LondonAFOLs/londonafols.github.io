@@ -105,7 +105,7 @@
             <div class="carousel-inner" role="listbox">
               {% for event in site.data.events %}
                 {% assign name = event.name | strip_html %}
-                {% assign link = event.link | url_encode %}
+                {% assign link = event.link %}
                 {% assign venue = event.venue %}
                 {% assign start = event.schedule.start | strip_html %}
                 {% assign duration = event.schedule.duration | strip_html %}
