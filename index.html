@@ -108,7 +108,10 @@
                 {% assign link = event.link | url_encode %}
                 {% assign venue = event.venue %}
                 {% assign start = event.schedule.start | strip_html %}
-                {% assign end = event.schedule.end | strip_html %}
+                {% assign duration = event.schedule.duration | strip_html %}
+                {% unless duration == '' %}
+                  {% assign durationMsg = '' | append: 'Duration: ' | append: duration %}
+                {% endunless %}
                 {% assign active = '' %}
                 {% if forloop.first %}
                   {% assign active = 'active' %}
@@ -125,7 +128,7 @@
                     <div class="col-md-1 col-sm-1">
                       <span class="glyphicon glyphicon-time"></span>
                     </div>
-                    <div class="when col-md-4 col-sm-4">{{ start }}</div>
+                    <div class="when col-md-4 col-sm-4">{{ start }}. {{ durationMsg }}</div>
                   </div>
                   <div class="row">
                     <a class="btn btn-primary btn-large learnmore" target="_blank" href="{{ link }}">Learn more »</a>

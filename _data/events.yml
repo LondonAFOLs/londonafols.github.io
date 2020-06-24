@@ -1,7 +1,15 @@
+- name: Bricks At Home - 2 days of virtual LEGO® creativity
+  link: https://bricksathome.co.uk/join/
+  venue:
+    name: Online
+  schedule:
+    start: Monday 25 June, 09:30 BST
+    duration: 2 days
+
 - name: Lego Meetup via Zoom - July 2020 - Bionicle
   link: https://www.meetup.com/LondonAFOLs/events/268436514/
   venue:
     name: Online (Zoom)
   schedule:
     start: Monday 13 July, 19:30 BST
-    end: Monday 13 July, 21:30 BST
+    duration: 2 hours
