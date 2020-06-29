@@ -1,0 +1,8 @@
+on:
+  schedule:
+    - cron:  '52 * * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
