@@ -1,6 +1,9 @@
+name: Publish Blog
+
 on:
   schedule:
-    - cron:  '52 * * * *'
+    - cron:  '56 * * * *'
+      
 jobs:
   build:
     runs-on: ubuntu-latest
