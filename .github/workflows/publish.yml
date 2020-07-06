@@ -1,0 +1,14 @@
+name: Publish Blog
+
+on:
+  schedule:
+    - cron:  '30 4 * * *'
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out 
+        uses: actions/checkout@v2
+        with:
+          submodules: 'true'
