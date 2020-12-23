@@ -1,14 +1,7 @@
-- name: Lego Meetup via Zoom - August 2020 - Miniland Figures 
-  link: https://www.meetup.com/LondonAFOLs/events/268436578
+- name: Lego Meetup via Zoom - January 2021 - The New Modular
+  link: https://www.meetup.com/LondonAFOLs/events/268436911/
   venue:
     name: Online (Zoom)
   schedule:
-    start: Monday 10 August, 19:30 BST
-    duration: 2 hours
-- name: Lego Meetup via Zoom - September 2020 - Trains
-  link: https://www.meetup.com/LondonAFOLs/events/268436656
-  venue:
-    name: Online (Zoom)
-  schedule:
-    start: Monday 14 September, 19:30 BST
+    start: Monday 11 January, 19:30 BST
     duration: 2 hours
