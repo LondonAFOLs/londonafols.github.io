@@ -1,7 +1,14 @@
-- name: Lego Meetup via Zoom - January 2021 - The New Modular
-  link: https://www.meetup.com/LondonAFOLs/events/268436911/
+- name: Lego Meetup via Zoom - February 2021 - Pets
+  link: https://www.meetup.com/LondonAFOLs/events/275539126/
   venue:
     name: Online (Zoom)
   schedule:
-    start: Monday 11 January, 19:30 BST
-    duration: 2 hours
+    start: Monday 8 February, 19:30 BST
+    duration: 2.5 hours
+- name: Lego Meetup via Zoom - March 2021 - Geometry Masterclass
+  link: https://www.meetup.com/LondonAFOLs/events/275539195/
+  venue:
+    name: Online (Zoom)
+  schedule:
+    start: Monday 8 March, 19:30 BST
+    duration: 2.5 hours
