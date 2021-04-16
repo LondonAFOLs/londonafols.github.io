@@ -1,7 +1,14 @@
-- name: Lego Meetup via Zoom - March 2021 - Geometry Masterclass
-  link: https://www.meetup.com/LondonAFOLs/events/275539195/
+- name: Lego Meetup via Zoom - May 2021 - Lego's Greatest Flops
+  link: https://www.meetup.com/LondonAFOLs/events/275539384/
   venue:
     name: Online (Zoom)
   schedule:
-    start: Monday 8 March, 19:30 BST
+    start: Monday 10 May, 19:30 BST
+    duration: 2.5 hours
+- name: Lego Meetup via Zoom - June 2021 - Food
+  link: https://www.meetup.com/LondonAFOLs/events/275539451/
+  venue:
+    name: Online (Zoom)
+  schedule:
+    start: Monday 7 June, 19:30 BST
     duration: 2.5 hours
