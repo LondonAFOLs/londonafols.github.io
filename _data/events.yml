@@ -6,16 +6,16 @@
     start: Sat/Sun 23/24 Nov, 10:00-16:00 BST
     duration: 2 days
 - name: Lego Meetup via Zoom - November 2021 - Winter Village
-   link: https://www.meetup.com/LondonAFOLs/events/275539622/
-   venue:
-     name: Online (Zoom - see Meetup for details)
-   schedule:
-     start: Monday 8 Nov, 19:30 BST
-     duration: 2.5 hours
+  link: https://www.meetup.com/LondonAFOLs/events/275539622/
+  venue:
+    name: Online (Zoom - see Meetup for details)
+  schedule:
+    start: Monday 8 Nov, 19:30 BST
+    duration: 2.5 hours
 - name: Lego Meetup (in real life) - December 2021 - Christmas Party
-   link: https://www.meetup.com/LondonAFOLs/events/275539673/
-   venue:
-     name: TBD
-   schedule:
-     start: Monday 13 Dec, 19:30 BST
-     duration: 2.5 hours
+  link: https://www.meetup.com/LondonAFOLs/events/275539673/
+  venue:
+    name: TBD
+  schedule:
+    start: Monday 13 Dec, 19:30 BST
+    duration: 2.5 hours
