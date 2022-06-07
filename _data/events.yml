@@ -1,21 +1,28 @@
-- name: Bluebell Railway - Brickworks Adventure 2021
-  link: https://www.meetup.com/LondonAFOLs/events/281466202/
+- name: Lego Meetup via Zoom - June 2022 - The Inside Tour
+  link: https://www.meetup.com/LondonAFOLs/events/283181727/
   venue:
-    name: Horsted Keynes Station
+    name: Online (Zoom - see Meetup link for details)
   schedule:
-    start: Sat/Sun 23/24 Nov, 10:00-16:00 BST
+    start: Tuesday 14 June, 19:30 BST
+    duration: 2.5 hours
+- name: London Transport Museum Acton Depot Brick Show 2022
+  link: https://www.meetup.com/londonafols/events/284428419/
+  venue:
+    name: Acton Depot, 2 Museum Way 118-120, Gunnersbury Lane, London, W3 9BQ
+  schedule:
+    start: Sat/Sun 2/3 July, 10:00-16:00 BST
     duration: 2 days
-- name: Lego Meetup via Zoom - November 2021 - Winter Village
-  link: https://www.meetup.com/LondonAFOLs/events/275539622/
+- name: Lego Meetup (in real life) - July 2022 - 90th Anniversary of LEGO
+  link: https://www.meetup.com/londonafols/events/283181741/
   venue:
-    name: Online (Zoom - see Meetup for details)
+    name: 26 Tolmer's Square, London, NW1 2PE
   schedule:
-    start: Monday 8 Nov, 19:30 BST
-    duration: 2.5 hours
-- name: Lego Meetup (in real life) - December 2021 - Christmas Party
-  link: https://www.meetup.com/LondonAFOLs/events/275539673/
+    start: Tuesday 12 July, 19:00 BST
+    duration: 3 hours
+- name: Redhill Brick and Model Show 2022
+  link: https://www.meetup.com/londonafols/events/285006621/
   venue:
-    name: TBD
+    name: 122 Ladbroke Rd, Redhill, RH1 1LF
   schedule:
-    start: Monday 13 Dec, 19:30 BST
-    duration: 2.5 hours
+    start: Sat 6 August, 12:00-16:00 BST
+    duration: 2 days
