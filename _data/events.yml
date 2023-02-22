@@ -1,7 +1,14 @@
-- name: Lego Meetup (in real life) - December 2022 - Christmas Party!
-  link: https://www.meetup.com/londonafols/events/283195375/
+- name: Lego Meetup (in real life) - March 2023 - Challenge Night
+  link: https://www.meetup.com/londonafols/events/290717791/
   venue:
     name: FAIM (next to the Square Tavern), 26 Tolmer's Square, London
   schedule:
-    start: Mon 5 December, 19:00 BST
+    start: Mon 13 March, 19:00 BST
+    duration: 3 hours
+- name: Lego Meetup (in real life) - April 2023 - Masterclass
+  link: https://www.meetup.com/londonafols/events/290717847/
+  venue:
+    name: FAIM (next to the Square Tavern), 26 Tolmer's Square, London
+  schedule:
+    start: Mon 3 April, 19:00 BST
     duration: 3 hours
