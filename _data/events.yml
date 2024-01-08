@@ -5,3 +5,10 @@
   schedule:
     start: Mon 15 Jan, 18:30 GMT
     duration: 3 hours
+- name: Lego Meetup - February 2024 - Modular Museum
+  link: https://www.meetup.com/londonafols/events/298226515/
+  venue:
+    name: 26 Tolmer's Square, London, NW1 2PE
+  schedule:
+    start: Feb 12 Jan, 18:30 GMT
+    duration: 3 hours
