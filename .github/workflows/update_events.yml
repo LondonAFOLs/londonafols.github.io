@@ -1,0 +1,47 @@
+name: Update events.yml from MeetUp ical
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs daily at midnight
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run script to parse iCal and generate YAML
+        env:
+          ICAL_URL: https://www.meetup.com/LondonAFOLs/events/ical/9923731/df6c39e5eb53434285d7bd8c6731e750e9a13025/London+AFOLs+-+Adult+Fans+of+Lego/
+        run: python bin/events.py
+
+      - name: Check if events.yaml has changed
+        id: yaml_check
+        run: |
+          if git diff --exit-code _data/events.yml; then
+            echo "File events.yaml has not changed."
+            echo "yaml_changed=false" >> $GITHUB_ENV
+          else
+            echo "File events.yaml has changed."
+            echo "yaml_changed=true" >> $GITHUB_ENV
+          fi
+
+      - name: Commit YAML file
+        if: env.changed == 'true'
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git commit -m "Updating _data/events.yml based on published MeetUp changes" _data/events.yml
+          git push
