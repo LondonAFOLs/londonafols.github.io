@@ -31,15 +31,15 @@ jobs:
         id: yaml_check
         run: |
           if git diff --exit-code _data/events.yml; then
-            echo "File events.yaml has not changed."
+            echo "File _data/events.yml has not changed."
             echo "yaml_changed=false" >> $GITHUB_ENV
           else
-            echo "File events.yaml has changed."
+            echo "File _data/events.yml has changed."
             echo "yaml_changed=true" >> $GITHUB_ENV
           fi
 
       - name: Commit YAML file
-        if: env.changed == 'true'
+        if: env.yaml_changed == 'true'
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
