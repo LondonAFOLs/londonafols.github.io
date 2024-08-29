@@ -3,7 +3,8 @@ name: Update events.yml from MeetUp ical
 on:
   schedule:
     - cron: '0 0 * * *'  # Runs daily at midnight
-
+  workflow_dispatch:
+    
 jobs:
   build:
     runs-on: ubuntu-latest
