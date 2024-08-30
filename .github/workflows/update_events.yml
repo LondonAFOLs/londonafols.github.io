@@ -2,7 +2,7 @@ name: Update events.yml from MeetUp ical
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs daily at midnight
+    - cron: '25 0 * * *'  # Runs daily at 12:25am UTC
   workflow_dispatch:
     
 jobs:
