@@ -24,7 +24,6 @@ for component in calendar.walk():
     if component.name == "VEVENT":
         event_name = icalendar.vText.from_ical(component.get("summary"))
         event_url = icalendar.vUri.from_ical(component.get("url", "N/A"))
-        event_location = icalendar.vText.from_ical(component.get("location", icalendar.vText("N/A").to_ical))
         event_start = component.get("dtstart").dt.strftime("%b %d %b, %H:%M GMT")
         event_end = component.get("dtend").dt.strftime("%b %d %b, %H:%M GMT")
         duration = component.get("dtend").dt - component.get("dtstart").dt
@@ -48,7 +47,7 @@ for component in calendar.walk():
             "name": str(event_name),
             "link": str(event_url),
             "venue": {
-                "name": str(event_location)
+                "name": "Check meetup.com for venue details"
             },
             "schedule": {
                 "start": event_start,
