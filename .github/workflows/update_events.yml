@@ -25,7 +25,7 @@ jobs:
 
       - name: Run script to parse iCal and generate YAML
         env:
-          ICAL_URL: https://www.meetup.com/LondonAFOLs/events/ical/9923731/df6c39e5eb53434285d7bd8c6731e750e9a13025/London+AFOLs+-+Adult+Fans+of+Lego/
+          ICAL_URL: https://www.meetup.com/__ms9923731/londonafols/events/ical/?expires=4897569180907&sig=03eac4dc0f86561a71d9194d4dd56a4623a2fbc1
         run: python bin/events.py
 
       - name: Check if events.yaml has changed
