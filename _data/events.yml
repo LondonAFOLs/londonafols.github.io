@@ -1,13 +1,5 @@
-- link: https://www.meetup.com/londonafols/events/313041497/
-  name: Lego Meetup - March 2026 - Pokemon theme builds
-  schedule:
-    duration: 3 hours
-    end: Mar 09 Mar, 21:30 GMT
-    start: Mar 09 Mar, 18:30 GMT
-  venue:
-    name: Check meetup.com for venue details
 - link: https://www.meetup.com/londonafols/events/313041532/
-  name: Lego Meetup - April 2026 - Placeholder
+  name: Lego Meetup - April 2026 - Challenge Night
   schedule:
     duration: 3 hours
     end: Apr 13 Apr, 21:30 GMT
@@ -36,6 +28,14 @@
     duration: 3 hours
     end: Jul 13 Jul, 21:30 GMT
     start: Jul 13 Jul, 18:30 GMT
+  venue:
+    name: Check meetup.com for venue details
+- link: https://www.meetup.com/londonafols/events/313778144/
+  name: Lego Meetup - Sat 8th August 2026 - Summer Barbecue
+  schedule:
+    duration: 3 hours
+    end: Aug 08 Aug, 17:00 GMT
+    start: Aug 08 Aug, 14:00 GMT
   venue:
     name: Check meetup.com for venue details
 - link: https://www.meetup.com/londonafols/events/313041552/
