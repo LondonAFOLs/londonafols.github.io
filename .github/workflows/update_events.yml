@@ -4,10 +4,12 @@ on:
   schedule:
     - cron: '25 0 * * *'  # Runs daily at 12:25am UTC
   workflow_dispatch:
-    
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
@@ -23,12 +25,45 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Bootstrap last success date if unset
+        env:
+          GH_TOKEN: ${{ secrets.GH_VARIABLES_GET_SET_PAT }}
+          LAST_SUCCESS_DATE: ${{ vars.MEETUP_GET_EVENTS_LAST_SUCCESS }}
+        run: |
+          if [ -z "$LAST_SUCCESS_DATE" ]; then
+            TODAY=$(date +%Y-%m-%d)
+            gh variable set MEETUP_GET_EVENTS_LAST_SUCCESS --body "$TODAY"
+            echo "Bootstrapped MEETUP_GET_EVENTS_LAST_SUCCESS to $TODAY"
+          fi
+
       - name: Run script to parse iCal and generate YAML
+        id: fetch_events
         env:
           ICAL_URL: https://www.meetup.com/__ms9923731/londonafols/events/ical/?expires=4897569180907&sig=03eac4dc0f86561a71d9194d4dd56a4623a2fbc1
         run: python bin/events.py
+        continue-on-error: true
+
+      - name: Evaluate fetch failure against grace period
+        if: steps.fetch_events.outcome == 'failure'
+        env:
+          LAST_SUCCESS_DATE: ${{ vars.MEETUP_GET_EVENTS_LAST_SUCCESS }}
+          GRACE_DAYS: ${{ vars.MEETUP_GET_EVENTS_FAILURE_GRACE_DAYS || '7' }}
+        run: |
+          echo "Meetup iCal fetch failed."
+          TODAY_EPOCH=$(date +%s)
+          LAST_EPOCH=$(date -d "$LAST_SUCCESS_DATE" +%s)
+          DIFF_DAYS=$(( (TODAY_EPOCH - LAST_EPOCH) / 86400 ))
+          echo "Days since last successful fetch: $DIFF_DAYS (grace period: $GRACE_DAYS days)"
+          if [ "$DIFF_DAYS" -gt "$GRACE_DAYS" ]; then
+            echo "Grace period of $GRACE_DAYS days exceeded. Failing build."
+            exit 1
+          else
+            echo "Within grace period. Skipping commit."
+            echo "SKIP_COMMIT=true" >> $GITHUB_ENV
+          fi
 
       - name: Check if events.yaml has changed
+        if: steps.fetch_events.outcome == 'success'
         id: yaml_check
         run: |
           if git diff --exit-code _data/events.yml; then
@@ -46,3 +81,12 @@ jobs:
           git config --local user.name "GitHub Actions"
           git commit -m "Updating _data/events.yml based on published MeetUp changes" _data/events.yml
           git push
+
+      - name: Record last successful fetch date
+        if: steps.fetch_events.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GH_VARIABLES_GET_SET_PAT }}
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          gh variable set MEETUP_GET_EVENTS_LAST_SUCCESS --body "$TODAY"
+          echo "Updated MEETUP_GET_EVENTS_LAST_SUCCESS to $TODAY"

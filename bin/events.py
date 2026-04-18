@@ -6,6 +6,8 @@ import icalendar
 import os
 import sys
 
+FETCH_FAILED_EXIT_CODE = 2
+
 # URL of the iCal file
 ICAL_URL = os.getenv("ICAL_URL")
 
@@ -13,11 +15,19 @@ if ICAL_URL is None:
     sys.exit()
 
 # Fetch the iCal file
-response = requests.get(ICAL_URL)
-response.raise_for_status()
+try:
+    response = requests.get(ICAL_URL, timeout=30)
+    response.raise_for_status()
+except Exception as e:
+    print(f"Failed to fetch iCal feed: {e}", file=sys.stderr)
+    sys.exit(FETCH_FAILED_EXIT_CODE)
 
 # Parse the iCal file
-calendar = icalendar.Calendar.from_ical(response.content)
+try:
+    calendar = icalendar.Calendar.from_ical(response.content)
+except Exception as e:
+    print(f"Failed to parse iCal feed: {e}", file=sys.stderr)
+    sys.exit(FETCH_FAILED_EXIT_CODE)
 
 events = []
 for component in calendar.walk():
