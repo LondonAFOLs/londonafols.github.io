@@ -30,9 +30,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_VARIABLES_GET_SET_PAT }}
           LAST_SUCCESS_DATE: ${{ vars.MEETUP_GET_EVENTS_LAST_SUCCESS }}
         run: |
-          if [ -z "$GH_TOKEN" ]; then
-            echo "GH_VARIABLES_GET_SET_PAT not configured — skipping bootstrap."
-          elif [ -z "$LAST_SUCCESS_DATE" ]; then
+          if [ -z "$LAST_SUCCESS_DATE" ]; then
             TODAY=$(date +%Y-%m-%d)
             gh variable set MEETUP_GET_EVENTS_LAST_SUCCESS --body "$TODAY"
             echo "Bootstrapped MEETUP_GET_EVENTS_LAST_SUCCESS to $TODAY"
