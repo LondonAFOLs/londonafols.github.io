@@ -5,8 +5,7 @@
 .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
 .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12,
 .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8,
-.col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3,
-.col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+.col-sm-9 {
   min-height: 1px;
   padding-left: 0;
   padding-right: 0;
@@ -16,6 +15,8 @@
 .container {
   padding: 0;
   width: auto;
+  // BS5 caps .container with a breakpoint-stepped max-width; we want it unbounded.
+  max-width: none;
 }
 
 // London AFOLs main styling
@@ -80,9 +81,17 @@ body.londonafols {
   }
 
   .row {
+    // BS5 .row uses --bs-gutter-x for negative margin + child padding; zero it out.
+    --bs-gutter-x: 0;
     padding: 0;
     margin-left: 0;
     margin-right: 0;
+  }
+
+  // BS5 sets `.row > * { width: 100% }`; bare buttons inside a decorative .row
+  // would stack full-width. Restore content-width sizing for them.
+  .row > .btn {
+    width: auto;
   }
 
   .btn-primary {
@@ -156,27 +165,46 @@ body.londonafols {
     }
 
     .carousel-indicators {
-      position: absolute;
-      margin: 0;
+      // Indicators flow in normal document order after .carousel-inner so they
+      // sit below the slide content (no overlap), left-justified.
+      position: static;
+      transform: none;
+      bottom: auto;
+      left: auto;
+      right: auto;
+      width: auto;
+      margin: 1.5em 0 0 0;
       padding: 0;
-      left: 0;
-      // bottom: ((@carouselIndicatorBarHeight - 10) * -1);
-      text-align: center;
-      width: 100%;
+      justify-content: flex-start;
     }
 
-    .glyphicon-refresh {
-      font-size: 3em;
+    // BS5 styles each indicator as a wide horizontal bar with transparent
+    // top/bottom borders (for the click target). Restore the BS3 dot look.
+    .carousel-indicators [data-bs-target] {
+      box-sizing: border-box;
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      margin: 1px 4px;
+      border: 1px solid #fff;
+      border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      border-radius: 50%;
+      background-color: transparent;
+      background-clip: padding-box;
+      text-indent: 0;
+      opacity: 1;
+    }
+
+    .carousel-indicators .active {
+      width: 12px;
+      height: 12px;
+      margin: 0 3px;
+      background-color: #fff;
     }
 
     .learnmore {
       margin-top: 20px;
-    }
-
-    .spinner {
-      position: absolute;
-      left: 0;
-      top: 50px;
     }
 
     .carousel {
@@ -184,7 +212,7 @@ body.londonafols {
       padding-right: 0;
       position: relative;
 
-      .item {
+      .carousel-item {
         min-height: 220px;
         padding: 0;
 
@@ -231,14 +259,9 @@ body.londonafols {
     }
 
     .btn {
-      margin-bottom: 1pt;
+      margin-right: 0.5em;
+      margin-bottom: 0.5em;
     }
-  }
-
-  .spinner .glyphicon-refresh {
-    display: inline-block;
-    -webkit-animation: spin 1000ms infinite linear;
-    animation: spin 1000ms infinite linear;
   }
 
   .disclaimer {
@@ -254,39 +277,24 @@ body.londonafols {
     top: -1.2em;
   }
 
-  .carousel .glyphicon {
-    font-size: (@standardFontSize + 2pt);
+  .carousel .icon {
+    width: (@standardFontSize + 2pt);
+    height: (@standardFontSize + 2pt);
+    vertical-align: middle;
   }
 
   .where-and-when {
+    // Override BS5's .row { display: flex } so the float/clear:both on each
+    // icon column below stacks the venue and time onto separate lines.
+    display: block;
+    // Clearfix so the floats inside don't bleed into the next .row (Learn more).
+    overflow: hidden;
     padding-top: 16px;
   }
 
   .address span {
     display: block;
     margin-left: 5px;
-  }
-
-  @-webkit-keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(359deg);
-      transform: rotate(359deg);
-    }
-  }
-
-  @keyframes spin {
-    0% {
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(359deg);
-      transform: rotate(359deg);
-    }
   }
 
   // Overrides for the announcement ribbon
@@ -327,7 +335,7 @@ body.londonafols {
       }
 
       .carousel {
-        .item {
+        .carousel-item {
           .address, .when {
             margin-right: 0em;
           }
@@ -442,6 +450,38 @@ body.londonafols {
 
     .disclaimer {
       padding: 0;
+    }
+  }
+
+  // Below 1024px, collapse the multi-column grid into a single stacked
+  // column — every block fills the available width. The carousel-item's
+  // internal location/time row keeps its float layout because the custom
+  // selectors targeting it have higher specificity than these overrides.
+  @media screen and (max-width: (@tabletWidth - 1)) {
+    .row {
+      display: block;
+    }
+    [class*="col-"],
+    [class*="offset-"] {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      flex: 0 0 auto;
+    }
+    .nextmeetup .minifigs {
+      display: none;
+    }
+    .nextmeetup .carousel-container {
+      padding-left: 0;
+    }
+    // Centre the logo and tagline (overrides the >=770px rule earlier that
+    // leaves the banner left-aligned).
+    .jumbotron .banner {
+      text-align: center;
+    }
+    .jumbotron .tagline {
+      text-align: center;
     }
   }
 }

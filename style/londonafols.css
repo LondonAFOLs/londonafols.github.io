@@ -33,19 +33,7 @@
 .col-sm-6,
 .col-sm-7,
 .col-sm-8,
-.col-sm-9,
-.col-xs-1,
-.col-xs-10,
-.col-xs-11,
-.col-xs-12,
-.col-xs-2,
-.col-xs-3,
-.col-xs-4,
-.col-xs-5,
-.col-xs-6,
-.col-xs-7,
-.col-xs-8,
-.col-xs-9 {
+.col-sm-9 {
   min-height: 1px;
   padding-left: 0;
   padding-right: 0;
@@ -54,6 +42,7 @@
 .container {
   padding: 0;
   width: auto;
+  max-width: none;
 }
 body.londonafols {
   margin: 0;
@@ -88,9 +77,13 @@ body.londonafols ul li {
   padding: 0;
 }
 body.londonafols .row {
+  --bs-gutter-x: 0;
   padding: 0;
   margin-left: 0;
   margin-right: 0;
+}
+body.londonafols .row > .btn {
+  width: auto;
 }
 body.londonafols .btn-primary {
   background: #E70128 none;
@@ -153,41 +146,57 @@ body.londonafols .nextmeetup .carousel-container {
   position: relative;
 }
 body.londonafols .nextmeetup .carousel-indicators {
-  position: absolute;
-  margin: 0;
+  position: static;
+  transform: none;
+  bottom: auto;
+  left: auto;
+  right: auto;
+  width: auto;
+  margin: 1.5em 0 0 0;
   padding: 0;
-  left: 0;
-  text-align: center;
-  width: 100%;
+  justify-content: flex-start;
 }
-body.londonafols .nextmeetup .glyphicon-refresh {
-  font-size: 3em;
+body.londonafols .nextmeetup .carousel-indicators [data-bs-target] {
+  box-sizing: border-box;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  margin: 1px 4px;
+  border: 1px solid #fff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  border-radius: 50%;
+  background-color: transparent;
+  background-clip: padding-box;
+  text-indent: 0;
+  opacity: 1;
+}
+body.londonafols .nextmeetup .carousel-indicators .active {
+  width: 12px;
+  height: 12px;
+  margin: 0 3px;
+  background-color: #fff;
 }
 body.londonafols .nextmeetup .learnmore {
   margin-top: 20px;
-}
-body.londonafols .nextmeetup .spinner {
-  position: absolute;
-  left: 0;
-  top: 50px;
 }
 body.londonafols .nextmeetup .carousel {
   padding-left: 0;
   padding-right: 0;
   position: relative;
 }
-body.londonafols .nextmeetup .carousel .item {
+body.londonafols .nextmeetup .carousel .carousel-item {
   min-height: 220px;
   padding: 0;
 }
-body.londonafols .nextmeetup .carousel .item .row {
+body.londonafols .nextmeetup .carousel .carousel-item .row {
   margin-left: 0px;
 }
-body.londonafols .nextmeetup .carousel .item h2.row {
+body.londonafols .nextmeetup .carousel .carousel-item h2.row {
   margin-top: 2em;
   font-size: 15pt;
 }
-body.londonafols .nextmeetup .carousel .item .col-md-1.col-sm-1 {
+body.londonafols .nextmeetup .carousel .carousel-item .col-md-1.col-sm-1 {
   display: inline-block;
   float: left;
   clear: both;
@@ -195,8 +204,8 @@ body.londonafols .nextmeetup .carousel .item .col-md-1.col-sm-1 {
   text-align: left;
   margin-right: 0.3em;
 }
-body.londonafols .nextmeetup .carousel .item .address,
-body.londonafols .nextmeetup .carousel .item .when {
+body.londonafols .nextmeetup .carousel .carousel-item .address,
+body.londonafols .nextmeetup .carousel .carousel-item .when {
   text-align: left;
   display: inline-block;
   float: left;
@@ -204,8 +213,8 @@ body.londonafols .nextmeetup .carousel .item .when {
   max-width: 80%;
   margin: 0 3em 1em 0;
 }
-body.londonafols .nextmeetup .carousel .item .address span,
-body.londonafols .nextmeetup .carousel .item .when span {
+body.londonafols .nextmeetup .carousel .carousel-item .address span,
+body.londonafols .nextmeetup .carousel .carousel-item .when span {
   display: inline-block;
   width: auto;
   margin: 0;
@@ -217,12 +226,8 @@ body.londonafols .online h1 {
   color: #010f67;
 }
 body.londonafols .online .btn {
-  margin-bottom: 1pt;
-}
-body.londonafols .spinner .glyphicon-refresh {
-  display: inline-block;
-  -webkit-animation: spin 1000ms infinite linear;
-  animation: spin 1000ms infinite linear;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
 }
 body.londonafols .disclaimer {
   padding: 0 80px;
@@ -235,35 +240,19 @@ body.londonafols .lego-reserved {
   vertical-align: baseline;
   top: -1.2em;
 }
-body.londonafols .carousel .glyphicon {
-  font-size: 14pt;
+body.londonafols .carousel .icon {
+  width: 14pt;
+  height: 14pt;
+  vertical-align: middle;
 }
 body.londonafols .where-and-when {
+  display: block;
+  overflow: hidden;
   padding-top: 16px;
 }
 body.londonafols .address span {
   display: block;
   margin-left: 5px;
-}
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-@keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
 }
 @media screen and (max-width: 770px) {
   body.londonafols .jumbotron {
@@ -287,8 +276,8 @@ body.londonafols .address span {
   body.londonafols .nextmeetup .minifigs {
     text-align: center;
   }
-  body.londonafols .nextmeetup .carousel .item .address,
-  body.londonafols .nextmeetup .carousel .item .when {
+  body.londonafols .nextmeetup .carousel .carousel-item .address,
+  body.londonafols .nextmeetup .carousel .carousel-item .when {
     margin-right: 0em;
   }
   body.londonafols .online {
@@ -371,6 +360,31 @@ body.londonafols .address span {
   }
   body.londonafols .disclaimer {
     padding: 0;
+  }
+}
+@media screen and (max-width: 1023px) {
+  body.londonafols .row {
+    display: block;
+  }
+  body.londonafols [class*="col-"],
+  body.londonafols [class*="offset-"] {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    flex: 0 0 auto;
+  }
+  body.londonafols .nextmeetup .minifigs {
+    display: none;
+  }
+  body.londonafols .nextmeetup .carousel-container {
+    padding-left: 0;
+  }
+  body.londonafols .jumbotron .banner {
+    text-align: center;
+  }
+  body.londonafols .jumbotron .tagline {
+    text-align: center;
   }
 }
 .github-fork-ribbon:before {

@@ -1,11 +1,8 @@
-requirejs.config({
-    baseUrl: 'scripts',
-    shim: {
-        "bootstrap" : { "deps" :['jquery'] }
-    },
-    paths: {
-        jquery: '//code.jquery.com/jquery-2.2.4.min',
-        bootstrap: '//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min'
-    }
-});
-requirejs(['app/main']);
+// Reveal one randomly-chosen announcement (the rest stay hidden).
+// Bootstrap 5's carousel auto-initialises via data-bs-ride="carousel".
+(function () {
+    var announcements = document.querySelectorAll('#announcements a');
+    if (!announcements.length) return;
+    var index = Math.floor(Math.random() * announcements.length);
+    announcements[index].removeAttribute('hidden');
+})();
