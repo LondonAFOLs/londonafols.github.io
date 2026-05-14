@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
 gem 'jekyll', '4.1.0'
+gem 'csv', '3.3.5'
+gem 'base64', '0.3.0'
+gem 'bigdecimal', '4.1.2'
 gem 'webrick'
 gem 'rake'
