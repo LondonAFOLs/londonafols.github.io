@@ -4,3 +4,5 @@
 .DS_Store
 _site
 Gemfile.lock
+.claude/worktrees/*
+.claude/settings.local.json
