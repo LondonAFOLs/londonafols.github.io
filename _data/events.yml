@@ -3,6 +3,7 @@
   schedule:
     duration: 3 hours
     end: May 11 May, 21:30 GMT
+    end_iso: '2026-05-11T21:30:00+00:00'
     start: May 11 May, 18:30 GMT
   venue:
     name: Check meetup.com for venue details
@@ -11,6 +12,7 @@
   schedule:
     duration: 3 hours
     end: Jun 08 Jun, 21:30 GMT
+    end_iso: '2026-06-08T21:30:00+00:00'
     start: Jun 08 Jun, 18:30 GMT
   venue:
     name: Check meetup.com for venue details
@@ -19,6 +21,7 @@
   schedule:
     duration: 3 hours
     end: Jul 13 Jul, 21:30 GMT
+    end_iso: '2026-07-13T21:30:00+00:00'
     start: Jul 13 Jul, 18:30 GMT
   venue:
     name: Check meetup.com for venue details
@@ -27,6 +30,7 @@
   schedule:
     duration: 3 hours
     end: Aug 08 Aug, 17:00 GMT
+    end_iso: '2026-08-08T17:00:00+00:00'
     start: Aug 08 Aug, 14:00 GMT
   venue:
     name: Check meetup.com for venue details
@@ -35,6 +39,7 @@
   schedule:
     duration: 3 hours
     end: Sep 14 Sep, 21:30 GMT
+    end_iso: '2026-09-14T21:30:00+00:00'
     start: Sep 14 Sep, 18:30 GMT
   venue:
     name: Check meetup.com for venue details
@@ -43,6 +48,7 @@
   schedule:
     duration: 3 hours
     end: Oct 12 Oct, 21:30 GMT
+    end_iso: '2026-10-12T21:30:00+00:00'
     start: Oct 12 Oct, 18:30 GMT
   venue:
     name: Check meetup.com for venue details
@@ -51,6 +57,7 @@
   schedule:
     duration: 3 hours
     end: Nov 09 Nov, 21:30 GMT
+    end_iso: '2026-11-09T21:30:00+00:00'
     start: Nov 09 Nov, 18:30 GMT
   venue:
     name: Check meetup.com for venue details
@@ -59,6 +66,7 @@
   schedule:
     duration: 3 hours
     end: Dec 14 Dec, 21:30 GMT
+    end_iso: '2026-12-14T21:30:00+00:00'
     start: Dec 14 Dec, 18:30 GMT
   venue:
     name: Check meetup.com for venue details

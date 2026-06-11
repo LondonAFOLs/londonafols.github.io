@@ -100,7 +100,7 @@
                 {% if forloop.first %}
                   {% assign active = 'active' %}
                 {% endif %}
-                <div class="carousel-item {{ active }}">
+                <div class="carousel-item {{ active }}" data-end-iso="{{ event.schedule.end_iso }}">
                   <h2 class="row">{{ name }}</h2>
                   <div class="row where-and-when">
                     <div class="col-md-1 col-sm-1">

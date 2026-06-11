@@ -62,6 +62,9 @@ for component in calendar.walk():
             "schedule": {
                 "start": event_start,
                 "end": event_end,
+                # Machine-readable end time, used by the browser to hide
+                # events that have already finished when the site build is stale.
+                "end_iso": component.get("dtend").dt.isoformat(),
                 "duration": event_duration
             }
         }
